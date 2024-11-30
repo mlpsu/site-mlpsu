@@ -1,18 +1,36 @@
+import type { Metadata } from 'next'
+import { Inter } from 'next/font/google'
 import './globals.css'
 import { Analytics } from '@vercel/analytics/react'
-import Link from 'next/link'
-import { MotionDiv } from '@/components/motion'
 
-export const metadata = {
-  title: 'ML PSU',
+const inter = Inter({ subsets: ['latin'] })
+
+export const metadata: Metadata = {
+  title: 'ML@PSU',
   description: 'Machine Learning Club at Penn State University',
+  openGraph: {
+    title: 'ML@PSU',
+    description: 'Machine Learning Club at Penn State University',
+    url: 'https://mlpsu.org',
+    siteName: 'ML@PSU',
+    images: [
+      {
+        url: '/opengraph.png',
+        width: 1200,
+        height: 630,
+        alt: 'ML@PSU - Machine Learning Club at Penn State University'
+      }
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'ML@PSU',
+    description: 'Machine Learning Club at Penn State University',
+    images: ['/opengraph.png'],
+  },
 }
-
-const footerLinks = [
-  { name: 'join us', path: '/join' },
-  { name: 'speak at ml@psu', path: '/speak' },
-  { name: 'email', path: 'mailto:machinelearningpennstate@gmail.com' },
-]
 
 export default function RootLayout({
   children,
@@ -21,23 +39,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
-        <main className="pb-24">
-          {children}
-        </main>
-        <footer className="fixed bottom-0 left-0 w-full bg-black/50 backdrop-blur-sm">
-          <div className="flex justify-center gap-8 px-8 py-4">
-            {footerLinks.map((item) => (
-              <Link
-                key={item.path}
-                href={item.path}
-                className="text-sm hover:text-[#FA8072] transition-colors flex items-center gap-1"
-              >
-                {item.name} <span className="text-[#FA8072]">↗</span>
-              </Link>
-            ))}
-          </div>
-        </footer>
+      <body className={inter.className}>
+        {children}
         <Analytics />
       </body>
     </html>
