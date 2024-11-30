@@ -1,7 +1,7 @@
 'use client'
 
-import { useEffect, useState } from 'react'
-import { MotionDiv } from './motion'
+import { useEffect, useState, useRef } from 'react'
+import { motion } from 'framer-motion'
 
 /* eslint-disable */
 const mlpsuArt = 
@@ -77,6 +77,18 @@ const BackgroundSpiral = () => {
 }
 
 export const AsciiArt = () => {
+  const [currentFrame, setCurrentFrame] = useState(0)
+  const frameRef = useRef(0)
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      frameRef.current = (frameRef.current + 1) % frames.length
+      setCurrentFrame(frameRef.current)
+    }, 100)
+
+    return () => clearInterval(interval)
+  }, []) // frameRef is stable, no need to include in deps
+
   return (
     <div className="relative">
       <BackgroundSpiral />

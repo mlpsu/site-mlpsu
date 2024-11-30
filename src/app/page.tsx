@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import { MotionDiv, MotionSection } from '@/components/motion'
 import Image from 'next/image'
 
 const staff = [
@@ -76,16 +75,16 @@ export default function Home() {
 
         <div className="text-left max-w-2xl mx-auto space-y-8 mb-32">
           <p className="text-gray-300 leading-relaxed whitespace-pre-wrap">
-            Hey, nice to meet you through the web! We're just a group of friends who got really excited about machine learning and wanted to create a space where we could geek out together.
+            Hey, nice to meet you through the web! We&apos;re just a group of friends who got really excited about machine learning and wanted to create a space where we could geek out together.
           </p>
           <p className="text-gray-300 leading-relaxed whitespace-pre-wrap">
             We started this club because we wanted a place to meet other cool people interested in ML, invite interesting speakers, and get some funding to support members building awesome projects or attending conferences.
           </p>
           <p className="text-gray-300 leading-relaxed whitespace-pre-wrap">
-            We regularly hold events - sometimes it's a guest speaker sharing their work, other times it's casual workshops where we walk through cool ML concepts together. We've got a pretty active Discord server too, where we share everything from research papers to the latest AI news and tools.
+            We regularly hold events - sometimes it&apos;s a guest speaker sharing their work, other times it&apos;s casual workshops where we walk through cool ML concepts together. We&apos;ve got a pretty active Discord server too, where we share everything from research papers to the latest AI news and tools.
           </p>
           <p className="text-gray-300 leading-relaxed whitespace-pre-wrap">
-            If you're motivated and curious about ML, we can help you out with resources like subscriptions, and maybe even take you along to conferences. We're all about supporting each other's learning journey!
+            If you&apos;re motivated and curious about ML, we can help you out with resources like subscriptions, and maybe even take you along to conferences. We&apos;re all about supporting each other&apos;s learning journey!
           </p>
         </div>
 
