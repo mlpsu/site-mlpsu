@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
+import { MotionDiv, fadeIn, stagger } from '../components/motion'
 
 const staff = [
   { name: 'Vanisha Gupta', role: 'President', link: 'https://www.linkedin.com/in/vanishagupta/' },
@@ -35,7 +36,12 @@ const scrollingText = [
 export default function Home() {
   return (
     <div className="min-h-screen bg-black">
-      <div className="max-w-4xl mx-auto px-4 py-16">
+      <MotionDiv 
+        className="max-w-4xl mx-auto px-4 py-16"
+        initial="hidden"
+        animate="visible"
+        variants={stagger}
+      >
         <div className="flex justify-center items-center space-x-8 mb-12 pt-8">
           <Link href="/about" className="hover:text-[#FA8072] transition-colors">
             about <span className="text-[#1E90FF]">↗</span>
@@ -51,7 +57,10 @@ export default function Home() {
           </Link>
         </div>
 
-        <div className="flex justify-between items-center mb-24">
+        <MotionDiv 
+          className="flex justify-between items-center mb-24"
+          variants={fadeIn}
+        >
           <h1 className="text-4xl font-mono tracking-tight">ml@psu</h1>
           <Image
             src="/logo.svg"
@@ -61,9 +70,12 @@ export default function Home() {
             priority
             className="animate-spin-slow"
           />
-        </div>
+        </MotionDiv>
 
-        <div className="scrolling-container mb-32">
+        <MotionDiv 
+          className="scrolling-container mb-32"
+          variants={fadeIn}
+        >
           <div className="scrolling-text text-sm font-pixel">
             {scrollingText.map((text, index) => (
               <span key={index} className="hover-glow mx-8">
@@ -71,9 +83,12 @@ export default function Home() {
               </span>
             ))}
           </div>
-        </div>
+        </MotionDiv>
 
-        <div className="text-left max-w-2xl mx-auto space-y-8 mb-32">
+        <MotionDiv 
+          className="text-left max-w-2xl mx-auto space-y-8 mb-32"
+          variants={fadeIn}
+        >
           <p className="text-gray-300 leading-relaxed whitespace-pre-wrap">
             Hey, nice to meet you through the web! We&apos;re just a group of friends who got really excited about machine learning and wanted to create a space where we could geek out together.
           </p>
@@ -86,9 +101,12 @@ export default function Home() {
           <p className="text-gray-300 leading-relaxed whitespace-pre-wrap">
             If you&apos;re motivated and curious about ML, we can help you out with resources like subscriptions, and maybe even take you along to conferences. We&apos;re all about supporting each other&apos;s learning journey!
           </p>
-        </div>
+        </MotionDiv>
 
-        <div className="text-center flex justify-center gap-8 mb-32">
+        <MotionDiv 
+          className="text-center flex justify-center gap-8 mb-32"
+          variants={fadeIn}
+        >
           <Link
             href="/join"
             className="text-lg hover:text-[#FA8072] transition-colors flex items-center gap-1"
@@ -101,9 +119,12 @@ export default function Home() {
           >
             become a speaker <span className="text-[#FA8072]">↗</span>
           </Link>
-        </div>
+        </MotionDiv>
 
-        <div className="space-y-8 mb-32">
+        <MotionDiv 
+          className="space-y-8 mb-32"
+          variants={fadeIn}
+        >
           <h2 className="text-2xl font-bold">Our Team</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {staff.map((member) => (
@@ -120,9 +141,12 @@ export default function Home() {
               </div>
             ))}
           </div>
-        </div>
+        </MotionDiv>
 
-        <div className="space-y-8">
+        <MotionDiv 
+          className="space-y-8"
+          variants={fadeIn}
+        >
           <h2 className="text-2xl font-bold">Past Speakers</h2>
           <div className="space-y-4">
             {pastSpeakers.map((speaker) => (
@@ -138,8 +162,8 @@ export default function Home() {
               </div>
             ))}
           </div>
-        </div>
-      </div>
+        </MotionDiv>
+      </MotionDiv>
     </div>
   )
 }
