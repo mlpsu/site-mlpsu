@@ -1,5 +1,3 @@
-import { MotionDiv } from '@/components/motion'
-
 export default function About() {
   return (
     <div className="min-h-screen bg-black">

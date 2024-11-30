@@ -1,33 +1,22 @@
-import { MotionDiv } from '@/components/motion'
 import Link from 'next/link'
 
 const resources = [
   {
-    title: 'Getting Started with AI',
-    description: 'A beginner-friendly guide to understanding AI concepts',
-    link: '/resources/getting-started',
-  },
-  {
-    title: 'Machine Learning Resources',
-    description: 'Curated list of ML tutorials, courses, and papers',
-    link: '/resources/ml-resources',
+    title: 'Getting Started with ML',
+    description: 'A curated list of beginner-friendly ML resources and tutorials.',
+    link: '/resources/getting-started'
   },
   {
     title: 'Research Papers',
-    description: 'Latest research papers in AI and ML',
-    link: '/resources/research-papers',
-  },
+    description: 'Latest research papers we find interesting and worth discussing.',
+    link: '/resources/papers'
+  }
 ]
 
 export default function Resources() {
   return (
-    <div className="min-h-screen">
-      <MotionDiv
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        className="max-w-4xl mx-auto px-4 py-16 space-y-12"
-      >
+    <div className="min-h-screen bg-black">
+      <div className="max-w-4xl mx-auto px-4 py-16 space-y-12">
         <div className="space-y-4">
           <h1 className="text-4xl md:text-6xl font-bold">Resources</h1>
           <p className="text-xl text-gray-300">
@@ -35,12 +24,7 @@ export default function Resources() {
           </p>
         </div>
 
-        <MotionDiv
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.3 }}
-          className="grid gap-6 md:grid-cols-2"
-        >
+        <div className="grid gap-6 md:grid-cols-2">
           {resources.map((resource) => (
             <Link
               key={resource.title}
@@ -52,20 +36,15 @@ export default function Resources() {
               <span className="arrow-link mt-4 inline-block">Read more</span>
             </Link>
           ))}
-        </MotionDiv>
+        </div>
 
-        <MotionDiv
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.5 }}
-          className="prose prose-invert max-w-none"
-        >
+        <div className="prose prose-invert max-w-none">
           <h2 className="text-3xl font-bold mb-6">Latest Articles</h2>
           <p className="text-gray-300">
             Check back soon for our latest articles and tutorials on AI/ML topics!
           </p>
-        </MotionDiv>
-      </MotionDiv>
+        </div>
+      </div>
     </div>
   )
 } 
