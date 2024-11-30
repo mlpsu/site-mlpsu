@@ -1,0 +1,119 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+:root {
+  --foreground-rgb: 255, 255, 255;
+  --background-rgb: 0, 0, 0;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-rgb));
+}
+
+* {
+  cursor: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAATCAYAAACk9eypAAAACXBIWXMAAAsTAAALEwEAmpwYAAAARklEQVR4nM2RSQ4AIAgD6f8fjVETBRdQD85tSDoBADYhIs6Yqjp7ARCRoQJYmb0KwOhI/wJYmVFbBwDj7lYrmP2o6+71QC8OYU4wr/qmlgYAAAAASUVORK5CYII="), auto !important;
+}
+
+.font-pixel {
+  font-family: 'Press Start 2P', monospace;
+  letter-spacing: 0.1em;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.scrolling-text {
+  white-space: nowrap;
+  animation: scroll 60s linear infinite;
+  display: inline-block;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.scrolling-container {
+  width: 100%;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(8px);
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.hover-glow {
+  display: inline-block;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.hover-glow:hover {
+  color: rgba(255, 255, 255, 1);
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+  transform: scale(1.05) translateY(-1px);
+}
+
+.link-style {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  padding-right: 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.link-style::after {
+  content: "↗";
+  position: absolute;
+  right: 0;
+  opacity: 1;
+  font-size: 1.1em;
+  transform: translateY(-2px);
+}
+
+.link-style:hover {
+  border-bottom-color: rgba(255, 255, 255, 0.8);
+}
+
+.join-button {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.join-button:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+* {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+@layer components {
+  h1 {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    letter-spacing: -0.04em;
+  }
+}
