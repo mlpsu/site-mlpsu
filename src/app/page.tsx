@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { MotionDiv, fadeIn, stagger } from '../components/motion'
+import { ArrowUpRight } from 'lucide-react'
 
 const staff = [
   { name: 'Vanisha Gupta', role: 'President', link: 'https://www.linkedin.com/in/vanishagupta/' },
@@ -37,23 +38,23 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-black">
       <MotionDiv 
-        className="max-w-4xl mx-auto px-4 py-16"
+        className="max-w-4xl mx-auto px-4 py-8 md:py-16"
         initial="hidden"
         animate="visible"
         variants={stagger}
       >
-        <div className="flex justify-center items-center space-x-8 mb-12 pt-8">
-          <Link href="/about" className="hover:text-[#FA8072] transition-colors">
-            about <span className="text-[#1E90FF]">↗</span>
+        <div className="flex flex-wrap justify-center items-center gap-4 md:gap-8 mb-12 pt-8 text-sm md:text-base">
+          <Link href="/about" className="hover:text-[#FA8072] transition-colors flex items-center gap-1">
+            about <ArrowUpRight className="w-4 h-4 text-[#1E90FF]" />
           </Link>
-          <Link href="/resources" className="hover:text-[#FA8072] transition-colors">
-            resources <span className="text-[#1E90FF]">↗</span>
+          <Link href="/resources" className="hover:text-[#FA8072] transition-colors flex items-center gap-1">
+            resources <ArrowUpRight className="w-4 h-4 text-[#1E90FF]" />
           </Link>
-          <Link href="/articles" className="hover:text-[#FA8072] transition-colors">
-            articles <span className="text-[#1E90FF]">↗</span>
+          <Link href="/articles" className="hover:text-[#FA8072] transition-colors flex items-center gap-1">
+            articles <ArrowUpRight className="w-4 h-4 text-[#1E90FF]" />
           </Link>
-          <Link href="/contact" className="hover:text-[#FA8072] transition-colors">
-            contact us <span className="text-[#1E90FF]">↗</span>
+          <Link href="/contact" className="hover:text-[#FA8072] transition-colors flex items-center gap-1">
+            contact us <ArrowUpRight className="w-4 h-4 text-[#1E90FF]" />
           </Link>
         </div>
 
@@ -104,20 +105,20 @@ export default function Home() {
         </MotionDiv>
 
         <MotionDiv 
-          className="text-center flex justify-center gap-8 mb-32"
+          className="text-center flex flex-col md:flex-row justify-center gap-4 md:gap-8 mb-32"
           variants={fadeIn}
         >
           <Link
             href="/join"
-            className="text-lg hover:text-[#FA8072] transition-colors flex items-center gap-1"
+            className="text-lg hover:text-[#FA8072] transition-colors flex items-center justify-center gap-1"
           >
-            become a member <span className="text-[#FA8072]">↗</span>
+            become a member <ArrowUpRight className="w-4 h-4 text-[#FA8072]" />
           </Link>
           <Link
             href="/speak"
-            className="text-lg hover:text-[#FA8072] transition-colors flex items-center gap-1"
+            className="text-lg hover:text-[#FA8072] transition-colors flex items-center justify-center gap-1"
           >
-            become a speaker <span className="text-[#FA8072]">↗</span>
+            become a speaker <ArrowUpRight className="w-4 h-4 text-[#FA8072]" />
           </Link>
         </MotionDiv>
 
@@ -133,9 +134,9 @@ export default function Home() {
                   href={member.link} 
                   target="_blank" 
                   rel="noopener noreferrer" 
-                  className="text-lg link-style"
+                  className="text-lg hover:text-[#FA8072] transition-colors flex items-center gap-1"
                 >
-                  {member.name}
+                  {member.name} <ArrowUpRight className="w-4 h-4" />
                 </Link>
                 <p className="text-gray-400">{member.role}</p>
               </div>
@@ -144,7 +145,7 @@ export default function Home() {
         </MotionDiv>
 
         <MotionDiv 
-          className="space-y-8"
+          className="space-y-8 mb-16"
           variants={fadeIn}
         >
           <h2 className="text-2xl font-bold">Past Speakers</h2>
@@ -155,9 +156,9 @@ export default function Home() {
                   href={speaker.link} 
                   target="_blank" 
                   rel="noopener noreferrer" 
-                  className="text-lg link-style"
+                  className="text-lg hover:text-[#FA8072] transition-colors flex items-center gap-1"
                 >
-                  {speaker.name}
+                  {speaker.name} <ArrowUpRight className="w-4 h-4" />
                 </Link>
               </div>
             ))}
