@@ -1,8 +1,16 @@
+import { MotionDiv, fadeIn, stagger } from '@/components/motion'
+
 export default function About() {
   return (
     <div className="min-h-screen bg-black">
-      <div className="max-w-4xl mx-auto px-4 py-16">
-        <div className="space-y-8">
+      <MotionDiv 
+        className="max-w-4xl mx-auto px-4 py-16"
+        {...stagger}
+      >
+        <MotionDiv 
+          className="space-y-8"
+          {...fadeIn}
+        >
           <p className="text-gray-300 leading-relaxed">
             We&apos;re a group of students passionate about machine learning and its applications.
           </p>
@@ -12,8 +20,8 @@ export default function About() {
           <p className="text-gray-300 leading-relaxed">
             Whether you&apos;re just starting out or already deep into ML research, there&apos;s a place for you here.
           </p>
-        </div>
-      </div>
+        </MotionDiv>
+      </MotionDiv>
     </div>
   )
 } 

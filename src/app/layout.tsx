@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     siteName: 'ML@PSU',
     images: [
       {
-        url: '/opengraph.png',
+        url: '/OpenGraph.png',
         width: 1200,
         height: 630,
         alt: 'ML@PSU - Machine Learning Club at Penn State University'
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'ML@PSU',
     description: 'Machine Learning Club at Penn State University',
-    images: ['/opengraph.png'],
+    images: ['/OpenGraph.png'],
   },
 }
 

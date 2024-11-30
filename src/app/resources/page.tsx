@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { MotionDiv, fadeIn, stagger } from '@/components/motion'
 
 const resources = [
   {
@@ -16,15 +17,25 @@ const resources = [
 export default function Resources() {
   return (
     <div className="min-h-screen bg-black">
-      <div className="max-w-4xl mx-auto px-4 py-16 space-y-12">
-        <div className="space-y-4">
+      <MotionDiv 
+        className="max-w-4xl mx-auto px-4 py-16 space-y-12"
+        {...stagger}
+      >
+        <MotionDiv 
+          className="space-y-4"
+          {...fadeIn}
+        >
           <h1 className="text-4xl md:text-6xl font-bold">Resources</h1>
           <p className="text-xl text-gray-300">
             Explore our curated collection of AI/ML resources and articles
           </p>
-        </div>
+        </MotionDiv>
 
-        <div className="grid gap-6 md:grid-cols-2">
+        <MotionDiv 
+          className="grid gap-6 md:grid-cols-2"
+          {...fadeIn}
+          transition={{ duration: 0.5, delay: 0.2 }}
+        >
           {resources.map((resource) => (
             <Link
               key={resource.title}
@@ -36,15 +47,19 @@ export default function Resources() {
               <span className="arrow-link mt-4 inline-block">Read more</span>
             </Link>
           ))}
-        </div>
+        </MotionDiv>
 
-        <div className="prose prose-invert max-w-none">
+        <MotionDiv 
+          className="prose prose-invert max-w-none"
+          {...fadeIn}
+          transition={{ duration: 0.5, delay: 0.4 }}
+        >
           <h2 className="text-3xl font-bold mb-6">Latest Articles</h2>
           <p className="text-gray-300">
             Check back soon for our latest articles and tutorials on AI/ML topics!
           </p>
-        </div>
-      </div>
+        </MotionDiv>
+      </MotionDiv>
     </div>
   )
 } 
