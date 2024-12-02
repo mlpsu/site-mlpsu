@@ -36,10 +36,10 @@ export default function BecomeASpeaker() {
           
           <section className="space-y-6">
             <p className="text-gray-300 leading-relaxed">
-              we love hearing from people who are passionate about what they do! if you're interested in speaking at one of our events, 
+              we love hearing from people who are passionate about what they do! if you&apos;re interested in speaking at one of our events, 
               just <Link href="/contact" className="text-[#FA8072] hover:opacity-80 inline-flex items-center">
                 shoot us an email <ArrowUpRight className="w-4 h-4 ml-1" />
-              </Link>. we'll review your proposal and send you a calendar booking link.
+              </Link>. we&apos;ll review your proposal and send you a calendar booking link.
             </p>
 
             <p className="text-gray-300 leading-relaxed">
@@ -75,7 +75,7 @@ export default function BecomeASpeaker() {
           </section>
 
           <section className="space-y-4">
-            <h2 className="text-xl font-mono">what's in it for you?</h2>
+            <h2 className="text-xl font-mono">what&apos;s in it for you?</h2>
             <ul className="text-gray-300 space-y-2 list-none">
               <li className="flex items-center gap-2">
                 <ArrowUpRight className="w-4 h-4 text-[#FA8072]" />
