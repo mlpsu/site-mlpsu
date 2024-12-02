@@ -109,13 +109,15 @@ export default function Home() {
           variants={fadeIn}
         >
           <Link
-            href="/join"
+            href="https://docs.google.com/forms/d/e/1FAIpQLSelQdK7kY8PMDSgemp9ksCSRHwji2qg3HgybPZuGuFMFrSVLg/viewform?usp=sf_link"
+            target="_blank"
+            rel="noopener noreferrer"
             className="text-lg hover:text-[#FA8072] transition-colors flex items-center justify-center gap-1"
           >
             become a member <ArrowUpRight className="w-4 h-4 text-[#FA8072]" />
           </Link>
           <Link
-            href="/speak"
+            href="/become-a-speaker"
             className="text-lg hover:text-[#FA8072] transition-colors flex items-center justify-center gap-1"
           >
             become a speaker <ArrowUpRight className="w-4 h-4 text-[#FA8072]" />
