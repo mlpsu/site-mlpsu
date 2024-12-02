@@ -25,31 +25,31 @@ function getPlatformInfo(url: string): { name: string; logo: string } {
   if (url.includes('notion.so')) {
     return {
       name: 'Notion',
-      logo: 'https://upload.wikimedia.org/wikipedia/commons/4/45/Notion_app_logo.png'
+      logo: '/Notion-logo.svg.png'
     }
   }
   if (url.includes('medium.com')) {
     return {
       name: 'Medium',
-      logo: 'https://miro.medium.com/v2/resize:fill:176:176/1*sHhtYhaCe2Uc3IU0IgKwIQ.png'
+      logo: '/medium-round-icon.webp'
     }
   }
   if (url.includes('linkedin.com')) {
     return {
       name: 'LinkedIn',
-      logo: 'https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png'
+      logo: '/linkedin-icon.png'
     }
   }
   if (url.includes('twitter.com')) {
     return {
       name: 'X (Twitter)',
-      logo: 'https://upload.wikimedia.org/wikipedia/commons/5/53/X_logo_2023_original.svg'
+      logo: '/x-icon.png'
     }
   }
   // Default case
   return {
     name: 'Article',
-    logo: 'https://upload.wikimedia.org/wikipedia/commons/8/80/Circle-icons-document.svg'
+    logo: '/article-icon.png'
   }
 }
 
@@ -63,7 +63,7 @@ const articles: Article[] = [
     author: {
       name: "Pranav Karra",
       role: "ML@PSU President",
-      avatar: "https://github.com/pranavkarra.png"
+      avatar: "/Pranav_Karra_Professional_Headshot.png"
     }
   },
   {
@@ -74,10 +74,9 @@ const articles: Article[] = [
     author: {
       name: "Pranav Karra",
       role: "ML@PSU President",
-      avatar: "https://github.com/pranavkarra.png"
+      avatar: "/Pranav_Karra_Professional_Headshot.png"
     }
-  },
-  // Add more articles as needed
+  }
 ]
 
 export default function ArticlesPage() {

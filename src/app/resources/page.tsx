@@ -54,7 +54,7 @@ export default function ResourcesPage() {
             <div className="flex items-center gap-3 mb-4">
               <div className="relative w-8 h-8">
                 <Image
-                  src="https://upload.wikimedia.org/wikipedia/commons/4/45/Notion_app_logo.png"
+                  src="/Notion-logo.svg.png"
                   alt="Notion Logo"
                   fill
                   className="object-contain"
