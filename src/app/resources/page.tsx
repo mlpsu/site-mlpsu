@@ -1,5 +1,6 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 import { ArrowUpRight } from 'lucide-react'
 
 export const metadata: Metadata = {
@@ -51,11 +52,14 @@ export default function ResourcesPage() {
                      hover:scale-[1.02] hover:-translate-y-1 cursor-pointer"
           >
             <div className="flex items-center gap-3 mb-4">
-              <img
-                src="https://upload.wikimedia.org/wikipedia/commons/4/45/Notion_app_logo.png"
-                alt="Notion Logo"
-                className="w-8 h-8"
-              />
+              <div className="relative w-8 h-8">
+                <Image
+                  src="https://upload.wikimedia.org/wikipedia/commons/4/45/Notion_app_logo.png"
+                  alt="Notion Logo"
+                  fill
+                  className="object-contain"
+                />
+              </div>
               <h2 className="text-2xl font-semibold">ML Resources</h2>
             </div>
             <p className="text-gray-600 dark:text-gray-300 mb-4">

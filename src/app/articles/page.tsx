@@ -1,5 +1,6 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 import { ArrowUpRight } from 'lucide-react'
 
 export const metadata: Metadata = {
@@ -55,25 +56,25 @@ function getPlatformInfo(url: string): { name: string; logo: string } {
 // Add your articles here
 const articles: Article[] = [
   {
-    title: "what you need to know about anthropic’s model context protocol (MCP)",
-    url: "https://medium.com/@pranavkarra001/what-you-need-to-know-about-anthropics-model-context-protocol-mcp-4200d17911d7",
-    description: "anthropic has open-sourced a protocol that lets AI models interact with your computer and apps.",
-    date: "2024-11-25",
-    author: {
-      name: "Pranav Karra",
-      role: "ML@PSU Vice-President",
-      avatar: "https://pranavkarra.me/_next/image?url=%2FPranav_Karra_Professional_Headshot.png&w=128&q=75"
-    }
-  },
-  {
-    title: "my guide to get shit done in machine learning.",
-    url: "https://medium.com/@pranavkarra001/my-guide-to-get-shit-done-in-machine-learning-f96b1cf9080b",
-    description: "yall are probably thinking whos this guy and why did he write a guide and why should i follow it? dont follow it, idc honestly.",
-    date: "2024-11-18",
+    title: "Getting Started with Machine Learning",
+    url: "https://medium.com/@pranavkarra/getting-started-with-ml",
+    description: "A beginner's guide to starting your journey in machine learning.",
+    date: "2024-01-15",
     author: {
       name: "Pranav Karra",
       role: "ML@PSU President",
-      avatar: "https://pranavkarra.me/_next/image?url=%2FPranav_Karra_Professional_Headshot.png&w=128&q=75"
+      avatar: "https://github.com/pranavkarra.png"
+    }
+  },
+  {
+    title: "Understanding Neural Networks",
+    url: "https://pranav-karra.notion.site/understanding-neural-networks",
+    description: "Deep dive into the fundamentals of neural networks and their applications.",
+    date: "2024-01-10",
+    author: {
+      name: "Pranav Karra",
+      role: "ML@PSU President",
+      avatar: "https://github.com/pranavkarra.png"
     }
   },
   // Add more articles as needed
@@ -127,11 +128,14 @@ export default function ArticlesPage() {
                          hover:scale-[1.02] hover:-translate-y-1 cursor-pointer"
               >
                 <div className="flex items-center gap-3 mb-4">
-                  <img
-                    src={platform.logo}
-                    alt={`${platform.name} Logo`}
-                    className="w-8 h-8"
-                  />
+                  <div className="relative w-8 h-8">
+                    <Image
+                      src={platform.logo}
+                      alt={`${platform.name} Logo`}
+                      fill
+                      className="object-contain"
+                    />
+                  </div>
                   <h2 className="text-2xl font-semibold">{article.title}</h2>
                 </div>
                 <p className="text-gray-600 dark:text-gray-300 mb-4">
@@ -140,11 +144,14 @@ export default function ArticlesPage() {
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-3">
                     {article.author.avatar && (
-                      <img
-                        src={article.author.avatar}
-                        alt={article.author.name}
-                        className="w-6 h-6 rounded-full"
-                      />
+                      <div className="relative w-6 h-6">
+                        <Image
+                          src={article.author.avatar}
+                          alt={article.author.name}
+                          fill
+                          className="rounded-full object-cover"
+                        />
+                      </div>
                     )}
                     <div className="text-sm text-gray-500 dark:text-gray-400">
                       <span className="font-medium">{article.author.name}</span>
