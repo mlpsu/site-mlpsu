@@ -56,25 +56,25 @@ function getPlatformInfo(url: string): { name: string; logo: string } {
 // Add your articles here
 const articles: Article[] = [
   {
-    title: "Getting Started with Machine Learning",
-    url: "https://medium.com/@pranavkarra/getting-started-with-ml",
-    description: "A beginner's guide to starting your journey in machine learning.",
+    title: "what you need to know about anthropic’s model context protocol (MCP)",
+    url: "https://medium.com/@pranavkarra001/what-you-need-to-know-about-anthropics-model-context-protocol-mcp-4200d17911d7",
+    description: "anthropic has open-sourced a protocol that lets AI models interact with your computer and apps.",
     date: "2024-01-15",
     author: {
       name: "Pranav Karra",
-      role: "ML@PSU President",
-      avatar: "/Pranav_Karra_Professional_Headshot.png"
+      role: "ML@PSU Vice President",
+      avatar: "/Pranav_Karra_Professional_Headshot.webp"
     }
   },
   {
-    title: "Understanding Neural Networks",
-    url: "https://pranav-karra.notion.site/understanding-neural-networks",
-    description: "Deep dive into the fundamentals of neural networks and their applications.",
+    title: "my guide to get shit done in machine learning.",
+    url: "https://medium.com/@pranavkarra001/my-guide-to-get-shit-done-in-machine-learning-f96b1cf9080b",
+    description: "yall are probably thinking whos this guy and why did he write a guide and why should i follow it? dont follow it, idc honestly.",
     date: "2024-01-10",
     author: {
       name: "Pranav Karra",
       role: "ML@PSU President",
-      avatar: "/Pranav_Karra_Professional_Headshot.png"
+      avatar: "/Pranav_Karra_Professional_Headshot.webp"
     }
   }
 ]
