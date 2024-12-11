@@ -14,10 +14,6 @@ body {
   background: rgb(var(--background-rgb));
 }
 
-* {
-  cursor: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAATCAYAAACk9eypAAAACXBIWXMAAAsTAAALEwEAmpwYAAAARklEQVR4nM2RSQ4AIAgD6f8fjVETBRdQD85tSDoBADYhIs6Yqjp7ARCRoQJYmb0KwOhI/wJYmVFbBwDj7lYrmP2o6+71QC8OYU4wr/qmlgYAAAAASUVORK5CYII="), auto !important;
-}
-
 .font-pixel {
   font-family: 'Press Start 2P', monospace;
   letter-spacing: 0.1em;
