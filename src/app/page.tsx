@@ -4,14 +4,14 @@ import { MotionDiv, fadeIn, stagger } from '../components/motion'
 import { ArrowUpRight } from 'lucide-react'
 
 const staff = [
-  { name: 'Pranav Karra', role: 'President', link: 'https://pranavkarra.me' },
-  { name: 'Vanisha Gupta', role: 'Vice President', link: 'https://www.linkedin.com/in/vanishagupta/' },
-  { name: 'Ian Yee', role: 'Treasurer', link: '#' },
-  { name: 'Krishna Pagrut', role: 'Tech Lead', link: 'https://www.linkedin.com/in/krishnapagrut/' },
-  { name: 'Pihu Agarwal', role: 'Secretary', link: 'https://www.linkedin.com/in/pihuagarwal/' },
-  { name: 'Manit Garg', role: 'Event Planner', link: 'https://www.linkedin.com/in/manitgarg/' },
-  { name: 'Evan Sinocchi', role: 'Software Engineer', link: 'https://www.linkedin.com/in/esinocchi/'},
-  { name: 'Dhruva Nagesh', role: 'Software Engineer', link: 'https://www.linkedin.com/in/dhruva-nagesh'}
+  { name: 'Pranav Karra', role: 'President', link: 'https://pranavkarra.me', image: '/team/pranav.jpg' },
+  { name: 'Vanisha Gupta', role: 'Vice President', link: 'https://www.linkedin.com/in/vanishagupta/', image: '/team/vanisha.jpg' },
+  { name: 'Ian Yee', role: 'Treasurer', link: '#', image: '/team/ian.jpg' },
+  { name: 'Krishna Pagrut', role: 'Tech Lead', link: 'https://www.linkedin.com/in/krishnapagrut/', image: '/team/krishna.jpg' },
+  { name: 'Pihu Agarwal', role: 'Secretary', link: 'https://www.linkedin.com/in/pihuagarwal/', image: '/team/pihu.jpg' },
+  { name: 'Manit Garg', role: 'Event Planner', link: 'https://www.linkedin.com/in/manitgarg/', image: '/team/manit.jpg' },
+  { name: 'Evan Sinocchi', role: 'Software Engineer', link: 'https://www.linkedin.com/in/esinocchi/', image: '/team/evan.jpg' },
+  { name: 'Dhruva Nagesh', role: 'Software Engineer', link: 'https://www.linkedin.com/in/dhruva-nagesh', image: '/team/dhruva.jpg' }
 ]
 
 const pastSpeakers = [
@@ -133,16 +133,25 @@ export default function Home() {
           <h2 className="text-2xl font-bold">Our Team</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {staff.map((member) => (
-              <div key={member.name} className="space-y-2">
-                <Link 
-                  href={member.link} 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className="text-lg hover:text-[#FA8072] transition-colors flex items-center gap-1"
-                >
-                  {member.name} <ArrowUpRight className="w-4 h-4" />
-                </Link>
-                <p className="text-gray-400">{member.role}</p>
+              <div key={member.name} className="flex items-center gap-4">
+                <Image
+                  src={member.image}
+                  alt={member.name}
+                  width={64}
+                  height={64}
+                  className="rounded-full object-cover w-16 h-16 hover:scale-105 transition-transform"
+                />
+                <div className="space-y-2">
+                  <Link 
+                    href={member.link} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="text-lg hover:text-[#FA8072] transition-colors flex items-center gap-1"
+                  >
+                    {member.name} <ArrowUpRight className="w-4 h-4" />
+                  </Link>
+                  <p className="text-gray-400">{member.role}</p>
+                </div>
               </div>
             ))}
           </div>
