@@ -4,7 +4,7 @@ import { MotionDiv, fadeIn, stagger } from '../components/motion'
 import { ArrowUpRight } from 'lucide-react'
 
 const staff = [
-  { name: 'Pranav Karra', role: 'President', link: 'https://pranavkarra.me', image: '/team/pranav.jpg' },
+  { name: 'Pranav Karra', role: 'President', link: 'https://pranavkarra.me', image: '/team/pranav.jpeg' },
   { name: 'Vanisha Gupta', role: 'Vice President', link: 'https://www.linkedin.com/in/vanishagupta/', image: '/team/vanisha.jpg' },
   { name: 'Ian Yee', role: 'Treasurer', link: '#', image: '/team/ian.jpg' },
   { name: 'Krishna Pagrut', role: 'Tech Lead', link: 'https://www.linkedin.com/in/krishnapagrut/', image: '/team/krishna.jpg' },
