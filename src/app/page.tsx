@@ -12,12 +12,13 @@ const staff = [
   { name: 'Manit Garg', role: 'Event Planner', link: 'https://www.linkedin.com/in/manitgarg/', image: '/team/manit.jpeg' },
   { name: 'Evan Sinocchi', role: 'Software Engineer', link: 'https://www.linkedin.com/in/esinocchi/', image: '/team/evan.jpg' },
   { name: 'Dhruva Nagesh', role: 'Software Engineer', link: 'https://www.linkedin.com/in/dhruva-nagesh', image: '/team/dhruvah.jpeg' },
-  { name: 'Andre Marinak', role: 'Outreach Chair', link: 'https://www.linkedin.com/in/andremarinak/,', image: '/team/andre.jpeg'}
+  { name: 'Andre Marinak', role: 'Outreach Chair', link: 'https://www.linkedin.com/in/andremarinak/', image: '/team/andre.jpeg'}
 ]
 
 const pastSpeakers = [
-  { name: 'Marmik Chaudhari', link: 'https://marmik.xyz' },
+  {name: 'Greg Fiengold', link: 'https://www.linkedin.com/in/greg-feingold-3a890a91/'},
   { name: 'Sree Bhattacharya', link: 'https://www.linkedin.com/in/sree-bhattacharyya/' },
+  { name: 'Marmik Chaudhari', link: 'https://marmik.xyz' }
 ]
 
 const scrollingText = [
@@ -133,7 +134,7 @@ export default function Home() {
         >
           <h2 className="text-2xl font-bold">Our Team</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {staff.map((member) => (
+            {staff.map((member) => ( // Iterates over every staff member
               <div key={member.name} className="flex items-center gap-4">
                 <Image
                   src={member.image}
@@ -143,14 +144,18 @@ export default function Home() {
                   className="rounded-full object-cover w-16 h-16 hover:scale-105 transition-transform"
                 />
                 <div className="space-y-2">
-                  <Link 
-                    href={member.link} 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    className="text-lg hover:text-[#FA8072] transition-colors flex items-center gap-1"
-                  >
-                    {member.name} <ArrowUpRight className="w-4 h-4" />
-                  </Link>
+                  {member.name === 'Ian Yee' ? ( // Start of Ian Yee's link modification
+                    <span className="text-lg text-white">{member.name}</span> // Uses span instead of link
+                  ) : (
+                    <Link // Link for other members if not Ian Yee
+                      href={member.link} 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="text-lg hover:text-[#FA8072] transition-colors flex items-center gap-1"
+                    >
+                      {member.name} <ArrowUpRight className="w-4 h-4" />
+                    </Link>
+                  )}
                   <p className="text-gray-400">{member.role}</p>
                 </div>
               </div>
