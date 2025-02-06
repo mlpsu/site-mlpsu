@@ -42,7 +42,7 @@ const scrollingText = [
 ]
 
 export default function Home() {
-  const [showEmail, setShowEmail] = useState(false)
+  const [showEmail] = useState(false)
   const [footerOffset, setFooterOffset] = useState(100) // Start fully hidden
 
   useEffect(() => {
@@ -55,7 +55,7 @@ export default function Home() {
       const distanceFromBottom = documentHeight - (scrollTop + windowHeight)
       
       // Calculate offset (0 = fully visible, 100 = fully hidden)
-      let offset = Math.max(0, Math.min(100, distanceFromBottom))
+      const offset = Math.max(0, Math.min(100, distanceFromBottom))
       setFooterOffset(offset)
     }
 
