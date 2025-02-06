@@ -1,7 +1,10 @@
+"use client"
+
 import Link from 'next/link'
 import Image from 'next/image'
 import { MotionDiv, fadeIn, stagger } from '../components/motion'
-import { ArrowUpRight } from 'lucide-react'
+import { ArrowUpRight, Mail, Linkedin } from 'lucide-react'
+import { useState, useEffect } from 'react'
 
 const staff = [
   { name: 'Pranav Karra', role: 'President', link: 'https://pranavkarra.me', image: '/team/pranav.jpeg' },
@@ -39,8 +42,29 @@ const scrollingText = [
 ]
 
 export default function Home() {
+  const [showEmail, setShowEmail] = useState(false)
+  const [footerOffset, setFooterOffset] = useState(100) // Start fully hidden
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY
+      const windowHeight = window.innerHeight
+      const documentHeight = document.documentElement.scrollHeight
+      
+      // Calculate how far we are from the bottom
+      const distanceFromBottom = documentHeight - (scrollTop + windowHeight)
+      
+      // Calculate offset (0 = fully visible, 100 = fully hidden)
+      let offset = Math.max(0, Math.min(100, distanceFromBottom))
+      setFooterOffset(offset)
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
   return (
-    <div className="min-h-screen bg-black">
+    <div className="min-h-screen bg-black relative pb-16">
       <MotionDiv 
         className="max-w-4xl mx-auto px-4 py-8 md:py-16"
         initial="hidden"
@@ -184,6 +208,38 @@ export default function Home() {
           </div>
         </MotionDiv>
       </MotionDiv>
+
+      <div 
+        className="fixed bottom-0 left-0 right-0 h-16 bg-zinc-900 flex items-center px-4"
+        style={{ transform: `translateY(${footerOffset}px)` }}
+      >
+        <div className="ml-auto flex items-center gap-8">
+          <Link
+            href="https://www.linkedin.com/company/machine-learning-penn-state/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-[#FA8072] transition-colors"
+          >
+            <Linkedin className="w-6 h-6 text-zinc-400" />
+          </Link>
+
+          <div className="relative" style={{ marginTop: '2px'}}>
+            <Link
+              href="mailto:machinelearningpennstate@gmail.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-[#FA8072] transition-colors"
+            >
+              <Mail className="w-6 h-6 text-zinc-400" />
+            </Link>
+            {showEmail && (
+              <div className="absolute bottom-full mb-2 left-1/2 transform -translate-x-1/2 bg-gray-700 px-4 py-2 rounded-md whitespace-nowrap">
+                mlpsu@psu.edu
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
     </div>
   )
 }
