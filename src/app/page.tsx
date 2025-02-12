@@ -210,10 +210,20 @@ export default function Home() {
       </MotionDiv>
 
       <div 
-        className="fixed bottom-0 left-0 right-0 h-16 bg-zinc-900 flex items-center px-4"
+        className="fixed bottom-0 left-0 right-0 h-16 bg-zinc-900 flex items-center justify-between px-4" 
         style={{ transform: `translateY(${footerOffset}px)` }}
       >
-        <div className="ml-auto flex items-center gap-8">
+        {/* Logo on the left */}
+        <Image
+          src="/grey_logo.svg"
+          alt="ML@PSU Logo"
+          width={32}
+          height={32}
+          priority
+        />
+
+        {/* LinkedIn and Email on the right */}
+        <div className="flex items-center gap-8">
           <Link
             href="https://www.linkedin.com/company/machine-learning-penn-state/"
             target="_blank"
