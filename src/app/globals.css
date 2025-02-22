@@ -119,3 +119,29 @@ body {
     letter-spacing: -0.04em;
   }
 }
+
+.sponsors-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.sponsors-container::before,
+.sponsors-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100px;
+  z-index: 2;
+}
+
+.sponsors-container::before {
+  left: 0;
+  background: linear-gradient(to right, rgb(var(--background-rgb)), transparent);
+}
+
+.sponsors-container::after {
+  right: 0;
+  background: linear-gradient(to left, rgb(var(--background-rgb)), transparent);
+}

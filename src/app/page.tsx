@@ -144,22 +144,18 @@ export default function Home() {
           variants={fadeIn}
         >
           <h2 className="text-xl font-bold mb-8">our sponsors</h2>
-          <div className="relative">
-            <div className="absolute left-0 top-0 w-16 h-full bg-gradient-to-r from-black to-transparent z-10" />
-            <div className="absolute right-0 top-0 w-16 h-full bg-gradient-to-l from-black to-transparent z-10" />
-            <div className="overflow-hidden">
-              <div className="flex animate-scroll-sponsors gap-12 py-4">
-                {[...sponsors, ...sponsors, ...sponsors].map((sponsor, index) => (
-                  <Image
-                    key={`${sponsor.name}-${index}`}
-                    src={sponsor.image}
-                    alt={sponsor.name}
-                    width={100}
-                    height={50}
-                    className="object-contain h-10 opacity-80 hover:opacity-100 transition-opacity filter brightness-125 contrast-125 saturate-0"
-                  />
-                ))}
-              </div>
+          <div className="sponsors-container">
+            <div className="animate-scroll-sponsors">
+              {[...sponsors, ...sponsors, ...sponsors].map((sponsor, index) => (
+                <Image
+                  key={`${sponsor.name}-${index}`}
+                  src={sponsor.image}
+                  alt={sponsor.name}
+                  width={100}
+                  height={50}
+                  className="object-contain h-10 opacity-80 hover:opacity-100 transition-opacity filter brightness-125 contrast-125 saturate-0"
+                />
+              ))}
             </div>
           </div>
         </MotionDiv>
