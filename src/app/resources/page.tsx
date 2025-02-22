@@ -10,30 +10,30 @@ export const metadata: Metadata = {
 
 export default function ResourcesPage() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-white">
       {/* Navigation */}
       <div className="flex flex-wrap justify-center items-center gap-4 md:gap-8 mb-12 pt-8 text-sm md:text-base">
         <Link 
           href="/" 
-          className="hover:text-[#FA8072] transition-colors flex items-center gap-1"
+          className="text-gray-800 hover:text-[#FA8072] transition-colors flex items-center gap-1"
         >
           home <ArrowUpRight className="w-4 h-4" />
         </Link>
         <Link 
           href="/about" 
-          className="hover:text-[#FA8072] transition-colors flex items-center gap-1"
+          className="text-gray-800 hover:text-[#FA8072] transition-colors flex items-center gap-1"
         >
           about <ArrowUpRight className="w-4 h-4" />
         </Link>
         <Link
           href="/articles"
-          className="hover:text-[#FA8072] transition-colors flex items-center gap-1" 
+          className="text-gray-800 hover:text-[#FA8072] transition-colors flex items-center gap-1" 
         >
           articles <ArrowUpRight className="w-4 h-4" />
         </Link>
         <Link 
           href="/contact" 
-          className="hover:text-[#FA8072] transition-colors flex items-center gap-1"
+          className="text-gray-800 hover:text-[#FA8072] transition-colors flex items-center gap-1"
         >
           contact <ArrowUpRight className="w-4 h-4" />
         </Link>
@@ -41,13 +41,13 @@ export default function ResourcesPage() {
 
       {/* Content */}
       <div className="max-w-6xl mx-auto px-4 py-8">
-        <h1 className="text-4xl font-bold mb-8">📜 resources</h1>
+        <h1 className="text-4xl font-bold mb-8 text-gray-900">📜 resources</h1>
         <div className="grid gap-6">
           <a
             href="https://pranav-karra.notion.site/Pranav-Karra-s-ML-Resources-122182bee24580bd8491dfc7a88ad801"
             target="_blank"
             rel="noopener noreferrer"
-            className="block p-6 bg-white dark:bg-gray-800 rounded-lg shadow-lg 
+            className="block p-6 bg-white border border-gray-200 rounded-lg shadow-lg 
                      hover:shadow-xl transition-all duration-300 ease-in-out
                      hover:scale-[1.02] hover:-translate-y-1 cursor-pointer"
           >
@@ -60,13 +60,13 @@ export default function ResourcesPage() {
                   className="object-contain"
                 />
               </div>
-              <h2 className="text-2xl font-semibold">ML Resources</h2>
+              <h2 className="text-2xl font-semibold text-gray-900">ML Resources</h2>
             </div>
-            <p className="text-gray-600 dark:text-gray-300 mb-4">
+            <p className="text-gray-700 mb-4">
               A comprehensive collection of machine learning resources, including research papers,
               courses, tutorials, and tools.
             </p>
-            <div className="text-sm text-gray-500 dark:text-gray-400 flex items-center justify-between">
+            <div className="text-sm text-gray-600 flex items-center justify-between">
               <span>Updated regularly • Curated by Pranav Karra</span>
               <ArrowUpRight className="w-5 h-5" />
             </div>

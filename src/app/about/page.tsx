@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen bg-black">
+    <div className="min-h-screen bg-white">
       <MotionDiv
         className="max-w-4xl mx-auto px-4 py-8"
         initial="hidden"
@@ -24,25 +24,25 @@ export default function AboutPage() {
         >
           <Link 
             href="/" 
-            className="hover:text-[#FA8072] transition-colors flex items-center gap-1"
+            className="text-gray-800 hover:text-[#FA8072] transition-colors flex items-center gap-1"
           >
             home <ArrowUpRight className="w-4 h-4 text-[#1E90FF]" />
           </Link>
           <Link 
             href="/about" 
-            className="hover:text-[#FA8072] transition-colors flex items-center gap-1"
+            className="text-gray-800 hover:text-[#FA8072] transition-colors flex items-center gap-1"
           >
             about <ArrowUpRight className="w-4 h-4 text-[#1E90FF]" />
           </Link>
           <Link
             href="/articles"
-            className="hover:text-[#FA8072] transition-colors flex items-center gap-1" 
+            className="text-gray-800 hover:text-[#FA8072] transition-colors flex items-center gap-1" 
           >
             articles <ArrowUpRight className="w-4 h-4 text-[#1E90FF]" />
           </Link>
           <Link 
             href="/contact" 
-            className="hover:text-[#FA8072] transition-colors flex items-center gap-1"
+            className="text-gray-800 hover:text-[#FA8072] transition-colors flex items-center gap-1"
           >
             contact <ArrowUpRight className="w-4 h-4 text-[#1E90FF]" />
           </Link>
@@ -54,13 +54,13 @@ export default function AboutPage() {
             variants={fadeIn}
             className="mb-12"
           >
-            <h1 className="text-4xl font-bold font-mono">
+            <h1 className="text-4xl font-bold font-mono text-gray-900">
               <span className="text-[#FA8072]">ML@PSU</span> is a community of
               <span className="bg-gradient-to-r from-[#FA8072] to-[#FFB6C1] text-transparent bg-clip-text"> machine learning enthusiasts</span>
             </h1>
           </MotionDiv>
 
-          <div className="space-y-12 font-mono text-gray-300">
+          <div className="space-y-12 font-mono text-gray-700">
             <MotionDiv 
               variants={fadeIn}
               className="space-y-4"

@@ -41,6 +41,14 @@ const scrollingText = [
   "Do neural networks hallucinate?"
 ]
 
+const sponsors = [
+  { name: 'sponsor1', image: '/sponsor/psu.png' },
+  { name: 'sponsor2', image: '/sponsor/warp.png' },
+  { name: 'sponsor3', image: '/sponsor/obsbot.png' },
+  { name: 'sponsor4', image: '/sponsor/ugreen.png' },
+  // Add all your sponsor images here
+]
+
 export default function Home() {
   const [showEmail] = useState(false)
   const [footerOffset, setFooterOffset] = useState(100) // Start fully hidden
@@ -64,7 +72,7 @@ export default function Home() {
   }, [])
 
   return (
-    <div className="min-h-screen bg-black relative pb-16">
+    <div className="min-h-screen bg-white relative pb-16">
       <MotionDiv 
         className="max-w-4xl mx-auto px-4 py-8 md:py-16"
         initial="hidden"
@@ -72,16 +80,16 @@ export default function Home() {
         variants={stagger}
       >
         <div className="flex flex-wrap justify-center items-center gap-4 md:gap-8 mb-12 pt-8 text-sm md:text-base">
-          <Link href="/about" className="hover:text-[#FA8072] transition-colors flex items-center gap-1">
+          <Link href="/about" className="hover:text-[#FA8072] transition-colors flex items-center gap-1 text-gray-800">
             about <ArrowUpRight className="w-4 h-4 text-[#1E90FF]" />
           </Link>
-          <Link href="/resources" className="hover:text-[#FA8072] transition-colors flex items-center gap-1">
+          <Link href="/resources" className="hover:text-[#FA8072] transition-colors flex items-center gap-1 text-gray-800">
             resources <ArrowUpRight className="w-4 h-4 text-[#1E90FF]" />
           </Link>
-          <Link href="/articles" className="hover:text-[#FA8072] transition-colors flex items-center gap-1">
+          <Link href="/articles" className="hover:text-[#FA8072] transition-colors flex items-center gap-1 text-gray-800">
             articles <ArrowUpRight className="w-4 h-4 text-[#1E90FF]" />
           </Link>
-          <Link href="/contact" className="hover:text-[#FA8072] transition-colors flex items-center gap-1">
+          <Link href="/contact" className="hover:text-[#FA8072] transition-colors flex items-center gap-1 text-gray-800">
             contact us <ArrowUpRight className="w-4 h-4 text-[#1E90FF]" />
           </Link>
         </div>
@@ -118,18 +126,42 @@ export default function Home() {
           className="text-left max-w-2xl mx-auto space-y-8 mb-32"
           variants={fadeIn}
         >
-          <p className="text-gray-300 leading-relaxed whitespace-pre-wrap">
+          <p className="text-gray-700 leading-relaxed whitespace-pre-wrap">
             Hey, nice to meet you through the web! We&apos;re just a group of friends who got really excited about machine learning and wanted to create a space where we could geek out together.
           </p>
-          <p className="text-gray-300 leading-relaxed whitespace-pre-wrap">
+          <p className="text-gray-700 leading-relaxed whitespace-pre-wrap">
             We started this club because we wanted a place to meet other cool people interested in ML, invite interesting speakers, and get some funding to support members building awesome projects or attending conferences.
           </p>
-          <p className="text-gray-300 leading-relaxed whitespace-pre-wrap">
+          <p className="text-gray-700 leading-relaxed whitespace-pre-wrap">
             We regularly hold events - sometimes it&apos;s a guest speaker sharing their work, other times it&apos;s casual workshops where we walk through cool ML concepts together. We&apos;ve got a pretty active Discord server too, where we share everything from research papers to the latest AI news and tools.
           </p>
-          <p className="text-gray-300 leading-relaxed whitespace-pre-wrap">
+          <p className="text-gray-700 leading-relaxed whitespace-pre-wrap">
             If you&apos;re motivated and curious about ML, we can help you out with resources like subscriptions, and maybe even take you along to conferences. We&apos;re all about supporting each other&apos;s learning journey!
           </p>
+        </MotionDiv>
+        <MotionDiv 
+          className="max-w-3xl mx-auto mb-32 text-center"
+          variants={fadeIn}
+        >
+          <h2 className="text-xl font-bold mb-8">our sponsors</h2>
+          <div className="relative">
+            <div className="absolute left-0 top-0 w-16 h-full bg-gradient-to-r from-black to-transparent z-10" />
+            <div className="absolute right-0 top-0 w-16 h-full bg-gradient-to-l from-black to-transparent z-10" />
+            <div className="overflow-hidden">
+              <div className="flex animate-scroll-sponsors gap-12 py-4">
+                {[...sponsors, ...sponsors, ...sponsors].map((sponsor, index) => (
+                  <Image
+                    key={`${sponsor.name}-${index}`}
+                    src={sponsor.image}
+                    alt={sponsor.name}
+                    width={100}
+                    height={50}
+                    className="object-contain h-10 opacity-80 hover:opacity-100 transition-opacity filter brightness-125 contrast-125 saturate-0"
+                  />
+                ))}
+              </div>
+            </div>
+          </div>
         </MotionDiv>
 
         <MotionDiv 
@@ -210,7 +242,7 @@ export default function Home() {
       </MotionDiv>
 
       <div 
-        className="fixed bottom-0 left-0 right-0 h-16 bg-zinc-900 flex items-center justify-between px-4" 
+        className="fixed bottom-0 left-0 right-0 h-16 bg-gray-100 flex items-center justify-between px-4 border-t border-gray-200" 
         style={{ transform: `translateY(${footerOffset}px)` }}
       >
         {/* Logo on the left */}
@@ -230,7 +262,7 @@ export default function Home() {
             rel="noopener noreferrer"
             className="hover:text-[#FA8072] transition-colors"
           >
-            <Linkedin className="w-6 h-6 text-zinc-400" />
+            <Linkedin className="w-6 h-6 text-gray-600" />
           </Link>
 
           <div className="relative" style={{ marginTop: '2px'}}>
@@ -240,10 +272,10 @@ export default function Home() {
               rel="noopener noreferrer"
               className="hover:text-[#FA8072] transition-colors"
             >
-              <Mail className="w-6 h-6 text-zinc-400" />
+              <Mail className="w-6 h-6 text-gray-600" />
             </Link>
             {showEmail && (
-              <div className="absolute bottom-full mb-2 left-1/2 transform -translate-x-1/2 bg-gray-700 px-4 py-2 rounded-md whitespace-nowrap">
+              <div className="absolute bottom-full mb-2 left-1/2 transform -translate-x-1/2 bg-gray-100 px-4 py-2 rounded-md whitespace-nowrap text-gray-800 border border-gray-200">
                 mlpsu@psu.edu
               </div>
             )}

@@ -5,8 +5,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
 :root {
-  --foreground-rgb: 255, 255, 255;
-  --background-rgb: 0, 0, 0;
+  --foreground-rgb: 0, 0, 0;
+  --background-rgb: 255, 255, 255;
 }
 
 body {
@@ -24,15 +24,21 @@ body {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-50%);
+    transform: translateX(calc(-33.33% - 3rem));
   }
+}
+
+.animate-scroll-sponsors {
+  animation: scroll 15s linear infinite;
+  display: flex;
+  gap: 3rem;
 }
 
 .scrolling-text {
   white-space: nowrap;
   animation: scroll 60s linear infinite;
   display: inline-block;
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(0, 0, 0, 0.6);
 }
 
 .scrolling-container {
@@ -41,10 +47,10 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(8px);
   padding: 1rem 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .hover-glow {
@@ -54,8 +60,8 @@ body {
 }
 
 .hover-glow:hover {
-  color: rgba(255, 255, 255, 1);
-  text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+  color: rgba(0, 0, 0, 1);
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
   transform: scale(1.05) translateY(-1px);
 }
 
@@ -65,7 +71,7 @@ body {
   align-items: center;
   text-decoration: none;
   padding-right: 1.5rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
 
 .link-style::after {
@@ -78,21 +84,21 @@ body {
 }
 
 .link-style:hover {
-  border-bottom-color: rgba(255, 255, 255, 0.8);
+  border-bottom-color: rgba(0, 0, 0, 0.8);
 }
 
 .join-button {
-  background: rgba(255, 255, 255, 0.1);
-  color: white;
+  background: rgba(0, 0, 0, 0.1);
+  color: black;
   padding: 0.75rem 1.5rem;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 4px;
   transition: all 0.3s ease;
   backdrop-filter: blur(10px);
 }
 
 .join-button:hover {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(0, 0, 0, 0.2);
   transform: translateY(-2px);
 }
 

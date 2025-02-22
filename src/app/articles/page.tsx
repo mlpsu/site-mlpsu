@@ -56,7 +56,7 @@ function getPlatformInfo(url: string): { name: string; logo: string } {
 // Add your articles here
 const articles: Article[] = [
   {
-    title: "what you need to know about anthropic’s model context protocol (MCP)",
+    title: "what you need to know about anthropic's model context protocol (MCP)",
     url: "https://medium.com/@pranavkarra001/what-you-need-to-know-about-anthropics-model-context-protocol-mcp-4200d17911d7",
     description: "anthropic has open-sourced a protocol that lets AI models interact with your computer and apps.",
     date: "2024-01-15",
@@ -81,30 +81,30 @@ const articles: Article[] = [
 
 export default function ArticlesPage() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-white">
       {/* Navigation */}
       <div className="flex flex-wrap justify-center items-center gap-4 md:gap-8 mb-12 pt-8 text-sm md:text-base">
         <Link 
           href="/" 
-          className="hover:text-[#FA8072] transition-colors flex items-center gap-1"
+          className="text-gray-800 hover:text-[#FA8072] transition-colors flex items-center gap-1"
         >
           home <ArrowUpRight className="w-4 h-4" />
         </Link>
         <Link 
           href="/about" 
-          className="hover:text-[#FA8072] transition-colors flex items-center gap-1"
+          className="text-gray-800 hover:text-[#FA8072] transition-colors flex items-center gap-1"
         >
           about <ArrowUpRight className="w-4 h-4" />
         </Link>
         <Link
           href="/articles"
-          className="hover:text-[#FA8072] transition-colors flex items-center gap-1" 
+          className="text-gray-800 hover:text-[#FA8072] transition-colors flex items-center gap-1" 
         >
           articles <ArrowUpRight className="w-4 h-4" />
         </Link>
         <Link 
           href="/contact" 
-          className="hover:text-[#FA8072] transition-colors flex items-center gap-1"
+          className="text-gray-800 hover:text-[#FA8072] transition-colors flex items-center gap-1"
         >
           contact <ArrowUpRight className="w-4 h-4" />
         </Link>
@@ -112,7 +112,7 @@ export default function ArticlesPage() {
 
       {/* Content */}
       <div className="max-w-6xl mx-auto px-4 py-8">
-        <h1 className="text-4xl font-bold mb-8">✍️ articles</h1>
+        <h1 className="text-4xl font-bold mb-8 text-gray-900">✍️ articles</h1>
         <div className="grid gap-6">
           {articles.map((article) => {
             const platform = getPlatformInfo(article.url)
@@ -122,7 +122,7 @@ export default function ArticlesPage() {
                 href={article.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block p-6 bg-white dark:bg-gray-800 rounded-lg shadow-lg 
+                className="block p-6 bg-white border border-gray-200 rounded-lg shadow-lg 
                          hover:shadow-xl transition-all duration-300 ease-in-out
                          hover:scale-[1.02] hover:-translate-y-1 cursor-pointer"
               >
@@ -135,9 +135,9 @@ export default function ArticlesPage() {
                       className="object-contain"
                     />
                   </div>
-                  <h2 className="text-2xl font-semibold">{article.title}</h2>
+                  <h2 className="text-2xl font-semibold text-gray-900">{article.title}</h2>
                 </div>
-                <p className="text-gray-600 dark:text-gray-300 mb-4">
+                <p className="text-gray-700 mb-4">
                   {article.description}
                 </p>
                 <div className="flex items-center justify-between">
@@ -152,10 +152,10 @@ export default function ArticlesPage() {
                         />
                       </div>
                     )}
-                    <div className="text-sm text-gray-500 dark:text-gray-400">
+                    <div className="text-sm text-gray-600">
                       <span className="font-medium">{article.author.name}</span>
                       {article.author.role && (
-                        <span className="text-gray-400 dark:text-gray-500">
+                        <span className="text-gray-500">
                           {' • '}{article.author.role}
                         </span>
                       )}
@@ -170,7 +170,7 @@ export default function ArticlesPage() {
                       </div>
                     </div>
                   </div>
-                  <ArrowUpRight className="w-5 h-5 text-gray-500 dark:text-gray-400" />
+                  <ArrowUpRight className="w-5 h-5 text-gray-600" />
                 </div>
               </a>
             )
