@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { MotionDiv, fadeIn, stagger } from '../components/motion'
-import { ArrowUpRight, Mail, Linkedin } from 'lucide-react'
+import { ArrowUpRight } from 'lucide-react'
 import { useState, useEffect } from 'react'
 
 const staff = [
@@ -42,15 +42,15 @@ const scrollingText = [
 ]
 
 const sponsors = [
-  { name: 'sponsor1', image: '/sponsor/psu.png' },
   { name: 'sponsor2', image: '/sponsor/warp.png' },
-  { name: 'sponsor3', image: '/sponsor/obsbot.png' },
+  { name: 'sponsor5', image: '/sponsor/pplx.png' },
   { name: 'sponsor4', image: '/sponsor/ugreen.png' },
+  { name: 'sponsor1', image: '/sponsor/psu.png' },
+  { name: 'sponsor3', image: '/sponsor/obsbot.png' },
   // Add all your sponsor images here
 ]
 
 export default function Home() {
-  const [showEmail] = useState(false)
   const [footerOffset, setFooterOffset] = useState(100) // Start fully hidden
 
   useEffect(() => {
@@ -161,23 +161,21 @@ export default function Home() {
         </MotionDiv>
 
         <MotionDiv 
-          className="text-center flex flex-col md:flex-row justify-center gap-4 md:gap-8 mb-32"
+          className="max-w-3xl mx-auto mb-32"
           variants={fadeIn}
         >
-          <Link
-            href="https://docs.google.com/forms/d/e/1FAIpQLSelQdK7kY8PMDSgemp9ksCSRHwji2qg3HgybPZuGuFMFrSVLg/viewform?usp=sf_link"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-lg hover:text-[#FA8072] transition-colors flex items-center justify-center gap-1"
-          >
-            become a member <ArrowUpRight className="w-4 h-4 text-[#FA8072]" />
-          </Link>
-          <Link
-            href="/become-a-speaker"
-            className="text-lg hover:text-[#FA8072] transition-colors flex items-center justify-center gap-1"
-          >
-            become a speaker <ArrowUpRight className="w-4 h-4 text-[#FA8072]" />
-          </Link>
+          <h2 className="text-xl font-bold mb-8 text-center">upcoming events</h2>
+          <div className="w-full flex justify-center">
+            <iframe
+              src="https://lu.ma/embed/calendar/cal-3mrXkQHS4duefEd/events?lt=light"
+              width="100%"
+              height="450"
+              style={{ border: '2px solid white', borderRadius: '12px' }}
+              allowFullScreen
+              aria-hidden="false"
+              tabIndex={0}
+            />
+          </div>
         </MotionDiv>
 
         <MotionDiv 
@@ -237,47 +235,57 @@ export default function Home() {
         </MotionDiv>
       </MotionDiv>
 
-      <div 
-        className="fixed bottom-0 left-0 right-0 h-16 bg-gray-100 flex items-center justify-between px-4 border-t border-gray-200" 
-        style={{ transform: `translateY(${footerOffset}px)` }}
-      >
-        {/* Logo on the left */}
-        <Image
-          src="/grey_logo.svg"
-          alt="ML@PSU Logo"
-          width={32}
-          height={32}
-          priority
-        />
-
-        {/* LinkedIn and Email on the right */}
-        <div className="flex items-center gap-8">
-          <Link
-            href="https://www.linkedin.com/company/machine-learning-penn-state/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-[#FA8072] transition-colors"
-          >
-            <Linkedin className="w-6 h-6 text-gray-600" />
-          </Link>
-
-          <div className="relative" style={{ marginTop: '2px'}}>
-            <Link
-              href="mailto:machinelearningpennstate@gmail.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-[#FA8072] transition-colors"
-            >
-              <Mail className="w-6 h-6 text-gray-600" />
-            </Link>
-            {showEmail && (
-              <div className="absolute bottom-full mb-2 left-1/2 transform -translate-x-1/2 bg-gray-100 px-4 py-2 rounded-md whitespace-nowrap text-gray-800 border border-gray-200">
-                mlpsu@psu.edu
+      {/* Update the footer section to use light grey instead of black */}
+      <div className="w-full bg-gray-100 text-gray-800 py-16">
+        <div className="max-w-4xl mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+            <div>
+              <h3 className="font-bold mb-4">MORE LINKS</h3>
+              <div className="space-y-2">
+                <Link href="#" className="block hover:text-[#FA8072] transition-colors">
+                  Back to Top ↗
+                </Link>
+                <Link href="/about" className="block hover:text-[#FA8072] transition-colors">
+                  About ↗
+                </Link>
+                <Link href="/resources" className="block hover:text-[#FA8072] transition-colors">
+                  Resources ↗
+                </Link>
+                <Link href="/contact" className="block hover:text-[#FA8072] transition-colors">
+                  Contact ↗
+                </Link>
               </div>
-            )}
+            </div>
+
+            <div>
+              <h3 className="font-bold mb-4">NEWSLETTER</h3>
+              <div>
+                <Link 
+                  href="https://lu.ma/mlpsu"
+                  target="_blank"
+                  rel="noopener noreferrer" 
+                  className="inline-block bg-gray-800 text-white px-6 py-2 rounded hover:bg-gray-700 transition-colors"
+                >
+                  Subscribe to Events
+                </Link>
+              </div>
+            </div>
+          </div>
+
+          {/* Footer text image */}
+          <div className="w-full px-8 md:px-16">
+            <Image
+              src="/Footer Text.png"
+              alt="Footer Text"
+              width={1920}
+              height={200}
+              className="w-full object-contain max-w-[2400px] mx-auto"
+              priority
+            />
           </div>
         </div>
       </div>
-    </div>
+        
+      </div>
   )
 }
