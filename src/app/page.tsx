@@ -271,10 +271,16 @@ export default function Home() {
           </div>
         </MotionDiv>
       </MotionDiv>
-
-      {/* Update the footer section to use light grey instead of black */}
-      <div className="w-full bg-gray-100 text-gray-800 py-16">
-        <div className="max-w-4xl mx-auto px-4">
+      {/* Footer section with background image */}
+      <div 
+        className="w-full py-16 text-white relative"
+        style={{
+          backgroundImage: "url('/footerback.png')",
+          backgroundSize: 'cover',
+          backgroundPosition: 'center'
+        }}
+      >
+        <div className="max-w-4xl mx-auto px-4 relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
             <div>
               <h3 className="font-bold mb-4">MORE LINKS</h3>
@@ -301,7 +307,7 @@ export default function Home() {
                   href="https://lu.ma/mlpsu"
                   target="_blank"
                   rel="noopener noreferrer" 
-                  className="inline-block bg-gray-800 text-white px-6 py-2 rounded hover:bg-gray-700 transition-colors"
+                  className="inline-block bg-white text-gray-800 px-6 py-2 rounded hover:bg-gray-200 transition-colors"
                 >
                   Subscribe to Events
                 </Link>
