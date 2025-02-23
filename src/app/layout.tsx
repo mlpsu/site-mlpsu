@@ -8,6 +8,7 @@ const inter = Inter({ subsets: ['latin'] })
 export const metadata: Metadata = {
   title: 'ML@PSU',
   description: 'Machine Learning Club at Penn State University',
+  metadataBase: new URL('https://mlpsu.org'),
   openGraph: {
     title: 'ML@PSU',
     description: 'Machine Learning Club at Penn State University',
@@ -30,6 +31,9 @@ export const metadata: Metadata = {
     description: 'Machine Learning Club at Penn State University',
     images: ['/preview.png'],
   },
+  other: {
+    'og:image:secure_url': 'https://mlpsu.org/preview.png',
+  }
 }
 
 export default function RootLayout({
