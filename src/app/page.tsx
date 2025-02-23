@@ -84,7 +84,7 @@ export default function Home() {
   }, [])
 
   return (
-    <div className="min-h-screen bg-white relative pb-16">
+    <div className="min-h-screen relative pb-16">
       <MotionDiv 
         className="max-w-4xl mx-auto px-4 py-8 md:py-16"
         initial="hidden"
