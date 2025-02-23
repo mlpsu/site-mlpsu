@@ -19,9 +19,21 @@ const staff = [
 ]
 
 const pastSpeakers = [
-  {name: 'Greg Fiengold', link: 'https://www.linkedin.com/in/greg-feingold-3a890a91/'},
-  { name: 'Sree Bhattacharya', link: 'https://www.linkedin.com/in/sree-bhattacharyya/' },
-  { name: 'Marmik Chaudhari', link: 'https://marmik.xyz' }
+  {
+    name: 'Greg Fiengold',
+    link: 'https://www.linkedin.com/in/greg-feingold-3a890a91/',
+    company_logo: '/pplx logo.png'
+  },
+  { 
+    name: 'Sree Bhattacharya',
+    link: 'https://www.linkedin.com/in/sree-bhattacharyya/',
+    company_logo: '/psu logo.png'
+  },
+  { 
+    name: 'Marmik Chaudhari',
+    link: 'https://marmik.xyz',
+    company_logo: '/psu logo.png'
+  }
 ]
 
 const scrollingText = [
@@ -139,6 +151,24 @@ export default function Home() {
             If you&apos;re motivated and curious about ML, we can help you out with resources like subscriptions, and maybe even take you along to conferences. We&apos;re all about supporting each other&apos;s learning journey!
           </p>
         </MotionDiv>
+
+        <MotionDiv
+          className="flex justify-center mb-32"
+          variants={fadeIn}
+        >
+          <a
+            href="https://tally.so/r/mJWMy7"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-gray-900 text-white px-8 py-4 rounded-full font-medium 
+                     transform transition-all duration-300 ease-in-out
+                     hover:scale-105 hover:shadow-lg hover:-translate-y-1
+                     active:scale-95 active:translate-y-0"
+          >
+            Join ML@PSU
+          </a>
+        </MotionDiv>
+
         <MotionDiv 
           className="max-w-3xl mx-auto mb-32 text-center"
           variants={fadeIn}
@@ -195,7 +225,7 @@ export default function Home() {
                 />
                 <div className="space-y-2">
                   {member.name === 'Ian Yee' ? ( // Start of Ian Yee's link modification
-                    <span className="text-lg text-white">{member.name}</span> // Uses span instead of link
+                    <span className="text-lg">{member.name}</span> // Removed text-white class
                   ) : (
                     <Link // Link for other members if not Ian Yee
                       href={member.link} 
@@ -220,7 +250,14 @@ export default function Home() {
           <h2 className="text-2xl font-bold">Past Speakers</h2>
           <div className="space-y-4">
             {pastSpeakers.map((speaker) => (
-              <div key={speaker.name}>
+              <div key={speaker.name} className="flex items-center gap-4">
+                <Image
+                  src={speaker.company_logo}
+                  alt={`${speaker.name}'s Company Logo`}
+                  width={20}
+                  height={20}
+                  className="object-contain"
+                />
                 <Link 
                   href={speaker.link} 
                   target="_blank" 
