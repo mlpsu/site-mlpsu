@@ -224,9 +224,9 @@ export default function Home() {
                   key={`${sponsor.name}-${index}`}
                   src={sponsor.image}
                   alt={sponsor.name}
-                  width={100}
-                  height={50}
-                  className="object-contain h-10 opacity-80 hover:opacity-100 transition-opacity filter brightness-125 contrast-125 saturate-0"
+                  width={120}
+                  height={60}
+                  className="object-contain h-14 opacity-90 hover:opacity-100 transition-opacity filter brightness-110 contrast-110"
                 />
               ))}
             </div>
