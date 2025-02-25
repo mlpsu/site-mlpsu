@@ -156,17 +156,60 @@ export default function Home() {
           className="flex justify-center mb-32"
           variants={fadeIn}
         >
-          <a
-            href="https://tally.so/r/mJWMy7"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-gray-900 text-white px-8 py-4 rounded-full font-medium 
-                     transform transition-all duration-300 ease-in-out
-                     hover:scale-105 hover:shadow-lg hover:-translate-y-1
-                     active:scale-95 active:translate-y-0"
-          >
-            Join ML@PSU
-          </a>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 w-full max-w-3xl">
+            <a
+              href="https://tally.so/r/mJWMy7"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-ml-gradient glass-effect text-white px-4 py-3 rounded-full font-medium 
+                       transform transition-all duration-300 ease-in-out
+                       hover:scale-105 hover:shadow-lg hover:-translate-y-1
+                       active:scale-95 active:translate-y-0 text-center
+                       shadow-[0_0_15px_rgba(255,105,180,0.3)]
+                       border border-white/20"
+            >
+              Join ML@PSU
+            </a>
+            <a
+              href="https://discord.gg/4BUhteYYgT"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-discord-gradient glass-effect text-white px-4 py-3 rounded-full font-medium 
+                       transform transition-all duration-300 ease-in-out
+                       hover:scale-105 hover:shadow-lg hover:-translate-y-1
+                       active:scale-95 active:translate-y-0 text-center
+                       shadow-[0_0_10px_rgba(88,101,242,0.3)]
+                       border border-white/20"
+            >
+              Join our Discord
+            </a>
+            <a
+              href="https://groupme.com/join_group/103911031/6hLBvx9a"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-groupme-gradient glass-effect text-white px-4 py-3 rounded-full font-medium 
+                       transform transition-all duration-300 ease-in-out
+                       hover:scale-105 hover:shadow-lg hover:-translate-y-1
+                       active:scale-95 active:translate-y-0 text-center
+                       shadow-[0_0_10px_rgba(0,175,240,0.3)]
+                       border border-white/20"
+            >
+              Join GroupMe
+            </a>
+            <a
+              href="https://lu.ma/mlpsu"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-calendar-gradient glass-effect text-white px-4 py-3 rounded-full font-medium 
+                       transform transition-all duration-300 ease-in-out
+                       hover:scale-105 hover:shadow-lg hover:-translate-y-1
+                       active:scale-95 active:translate-y-0 text-center
+                       shadow-[0_0_10px_rgba(139,92,246,0.3)]
+                       border border-white/20"
+            >
+              Join Calendar
+            </a>
+          </div>
         </MotionDiv>
 
         <MotionDiv 
@@ -271,64 +314,6 @@ export default function Home() {
           </div>
         </MotionDiv>
       </MotionDiv>
-      {/* Footer section with background image */}
-      <div 
-        className="w-full py-16 text-white relative"
-        style={{
-          backgroundImage: "url('/footerback.png')",
-          backgroundSize: 'cover',
-          backgroundPosition: 'center'
-        }}
-      >
-        <div className="max-w-4xl mx-auto px-4 relative z-10">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-            <div>
-              <h3 className="font-bold mb-4">MORE LINKS</h3>
-              <div className="space-y-2">
-                <Link href="#" className="block hover:text-[#FA8072] transition-colors">
-                  Back to Top ↗
-                </Link>
-                <Link href="/about" className="block hover:text-[#FA8072] transition-colors">
-                  About ↗
-                </Link>
-                <Link href="/resources" className="block hover:text-[#FA8072] transition-colors">
-                  Resources ↗
-                </Link>
-                <Link href="/contact" className="block hover:text-[#FA8072] transition-colors">
-                  Contact ↗
-                </Link>
-              </div>
-            </div>
-
-            <div>
-              <h3 className="font-bold mb-4">NEWSLETTER</h3>
-              <div>
-                <Link 
-                  href="https://lu.ma/mlpsu"
-                  target="_blank"
-                  rel="noopener noreferrer" 
-                  className="inline-block bg-white text-gray-800 px-6 py-2 rounded hover:bg-gray-200 transition-colors"
-                >
-                  Subscribe to Events
-                </Link>
-              </div>
-            </div>
-          </div>
-
-          {/* Footer text image */}
-          <div className="w-full px-8 md:px-16">
-            <Image
-              src="/Footer Text.png"
-              alt="Footer Text"
-              width={1920}
-              height={200}
-              className="w-full object-contain max-w-[2400px] mx-auto"
-              priority
-            />
-          </div>
-        </div>
-      </div>
-        
-      </div>
+    </div>
   )
 }
