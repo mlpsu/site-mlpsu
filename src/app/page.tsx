@@ -8,12 +8,11 @@ import { useState, useEffect, useRef } from 'react'
 import { motion, useScroll, useTransform, useInView } from 'framer-motion'
 
 const staff = [
-  { name: 'Pranav Karra', role: 'President', link: 'https://pranavkarra.me', image: '/team/pranav.jpeg' },
+  { name: 'Pranav Karra', role: 'Founder & President', link: 'https://pranavkarra.me', image: '/team/pranav.jpeg' },
   { name: 'Vanisha Gupta', role: 'Vice President', link: 'https://www.linkedin.com/in/vanishagupta/', image: '/team/vanisha.jpeg' },
-  { name: 'Ian Yee', role: 'Treasurer', link: '#', image: '/team/ian.jpg' },
   { name: 'Krishna Pagrut', role: 'Tech Lead', link: 'https://www.linkedin.com/in/krishnapagrut/', image: '/team/krishna.jpeg' },
   { name: 'Pihu Agarwal', role: 'Secretary', link: 'https://www.linkedin.com/in/pihuagarwal/', image: '/team/pihu.jpeg' },
-  { name: 'Manit Garg', role: 'Event Planner', link: 'https://www.linkedin.com/in/manitgarg/', image: '/team/manit.jpeg' },
+  { name: 'Manit Garg', role: 'Treasurer', link: 'https://www.linkedin.com/in/manitgarg/', image: '/team/manit.jpeg' },
   { name: 'Evan Sinocchi', role: 'Software Engineer', link: 'https://www.linkedin.com/in/esinocchi/', image: '/team/evan.jpg' },
   { name: 'Dhruva Nagesh', role: 'Software Engineer', link: 'https://www.linkedin.com/in/dhruva-nagesh', image: '/team/dhruvah.jpeg' },
   { name: 'Andre Marinak', role: 'Outreach Chair', link: 'https://www.linkedin.com/in/andremarinak/', image: '/team/andre.jpeg'}
@@ -156,62 +155,62 @@ export default function Home() {
           </p>
         </MotionDiv>
 
-        <MotionDiv
-          className="flex justify-center mb-32"
+        <MotionDiv 
+          className="flex flex-col items-center justify-center gap-6 mb-32"
           variants={fadeIn}
         >
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 w-full max-w-3xl">
+          {/* Main buttons side by side */}
+          <div className="flex flex-wrap justify-center gap-4 w-full max-w-2xl">
             <a
               href="https://tally.so/r/mJWMy7"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-ml-gradient glass-effect text-white px-4 py-3 rounded-full font-medium 
+              className="bg-white text-black px-6 py-3 rounded-full font-medium flex-1 min-w-[180px]
                        transform transition-all duration-300 ease-in-out
-                       hover:scale-105 hover:shadow-lg hover:-translate-y-1
-                       active:scale-95 active:translate-y-0 text-center
-                       shadow-[0_0_15px_rgba(255,105,180,0.3)]
-                       border border-white/20"
+                       hover:bg-black hover:text-white
+                       active:scale-95 text-center
+                       border-2 border-black"
             >
               Join ML@PSU
             </a>
+
+            <a
+              href="#resources-we-offer"
+              className="bg-white text-black px-6 py-3 rounded-full font-medium flex-1 min-w-[180px]
+                       transform transition-all duration-300 ease-in-out
+                       hover:bg-black hover:text-white
+                       active:scale-95 text-center
+                       border-2 border-black"
+            >
+              Resources we offer
+            </a>
+          </div>
+
+          {/* Social links row */}
+          <div className="flex flex-wrap justify-center gap-6 mt-2">
             <a
               href="https://discord.gg/4BUhteYYgT"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-discord-gradient glass-effect text-white px-4 py-3 rounded-full font-medium 
-                       transform transition-all duration-300 ease-in-out
-                       hover:scale-105 hover:shadow-lg hover:-translate-y-1
-                       active:scale-95 active:translate-y-0 text-center
-                       shadow-[0_0_10px_rgba(88,101,242,0.3)]
-                       border border-white/20"
+              className="text-gray-800 hover:text-[#5865F2] transition-colors flex items-center gap-1"
             >
-              Join our Discord
+              Discord <ArrowUpRight className="w-4 h-4" />
             </a>
             <a
               href="https://groupme.com/join_group/103911031/6hLBvx9a"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-groupme-gradient glass-effect text-white px-4 py-3 rounded-full font-medium 
-                       transform transition-all duration-300 ease-in-out
-                       hover:scale-105 hover:shadow-lg hover:-translate-y-1
-                       active:scale-95 active:translate-y-0 text-center
-                       shadow-[0_0_10px_rgba(0,175,240,0.3)]
-                       border border-white/20"
+              className="text-gray-800 hover:text-[#00AFF0] transition-colors flex items-center gap-1"
             >
-              Join GroupMe
+              GroupMe <ArrowUpRight className="w-4 h-4" />
             </a>
             <a
               href="https://lu.ma/mlpsu"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-calendar-gradient glass-effect text-white px-4 py-3 rounded-full font-medium 
-                       transform transition-all duration-300 ease-in-out
-                       hover:scale-105 hover:shadow-lg hover:-translate-y-1
-                       active:scale-95 active:translate-y-0 text-center
-                       shadow-[0_0_10px_rgba(139,92,246,0.3)]
-                       border border-white/20"
+              className="text-gray-800 hover:text-[#9333ea] transition-colors flex items-center gap-1"
             >
-              Join Calendar
+              Calendar <ArrowUpRight className="w-4 h-4" />
             </a>
           </div>
         </MotionDiv>
@@ -359,6 +358,115 @@ export default function Home() {
                 </svg>
                 Web
               </a>
+            </div>
+          </div>
+        </MotionDiv>
+
+        <MotionDiv 
+          className="max-w-3xl mx-auto mb-32"
+          variants={fadeIn}
+          id="resources-we-offer"
+          style={{ scrollMarginTop: '100px' }}
+        >
+          <h2 className="text-xl font-bold mb-8 text-center">what we are offering</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {/* Anthropic Credits Card */}
+            <div className="bg-white rounded-xl overflow-hidden shadow-lg border border-gray-200 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group">
+              <div className="p-6 flex flex-col h-full">
+                <div className="flex justify-center mb-4">
+                  <Image
+                    src="/claude.png"
+                    alt="Anthropic Claude Logo"
+                    width={120}
+                    height={60}
+                    className="object-contain h-12"
+                  />
+                </div>
+                <h3 className="text-xl font-semibold mb-2 text-center">Anthropic Credits</h3>
+                <p className="text-gray-600 mb-4 flex-grow">
+                  $5-10/mo credits that can be used for Claude Code, Projects, Cursor, and more.
+                </p>
+                <div className="text-center text-lg font-medium mb-4 text-purple-700">$5-10/mo</div>
+                <a
+                  href="https://tally.so/r/w8RW2P"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-ml-gradient glass-effect text-white px-4 py-3 rounded-full font-medium 
+                           transform transition-all duration-300 ease-in-out
+                           hover:scale-105 hover:shadow-lg hover:-translate-y-1
+                           active:scale-95 active:translate-y-0 text-center
+                           shadow-[0_0_15px_rgba(255,105,180,0.3)]
+                           border border-white/20 block"
+                >
+                  Apply Now
+                </a>
+              </div>
+            </div>
+
+            {/* OpenAI Credits Card */}
+            <div className="bg-white rounded-xl overflow-hidden shadow-lg border border-gray-200 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group">
+              <div className="p-6 flex flex-col h-full">
+                <div className="flex justify-center mb-4">
+                  <Image
+                    src="/openai.png"
+                    alt="OpenAI Logo"
+                    width={120}
+                    height={60}
+                    className="object-contain h-12"
+                  />
+                </div>
+                <h3 className="text-xl font-semibold mb-2 text-center">OpenAI Credits</h3>
+                <p className="text-gray-600 mb-4 flex-grow">
+                  $5-10/mo credits that can be used for projects, Cursor, and anything else OpenAI offers.
+                </p>
+                <div className="text-center text-lg font-medium mb-4 text-green-700">$5-10/mo</div>
+                <a
+                  href="https://tally.so/r/w8RW2P"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-discord-gradient glass-effect text-white px-4 py-3 rounded-full font-medium 
+                           transform transition-all duration-300 ease-in-out
+                           hover:scale-105 hover:shadow-lg hover:-translate-y-1
+                           active:scale-95 active:translate-y-0 text-center
+                           shadow-[0_0_10px_rgba(88,101,242,0.3)]
+                           border border-white/20 block"
+                >
+                  Apply Now
+                </a>
+              </div>
+            </div>
+
+            {/* Modal Credits Card */}
+            <div className="bg-white rounded-xl overflow-hidden shadow-lg border border-gray-200 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group">
+              <div className="p-6 flex flex-col h-full">
+                <div className="flex justify-center mb-4">
+                  <Image
+                    src="/sponsor/modal.png"
+                    alt="Modal Logo"
+                    width={120}
+                    height={60}
+                    className="object-contain h-12"
+                  />
+                </div>
+                <h3 className="text-xl font-semibold mb-2 text-center">Modal Credits</h3>
+                <p className="text-gray-600 mb-4 flex-grow">
+                  $5-30/mo credits (up to $100/mo with proper research proposal and advisor approval). Rent GPUs for inference, training, experiments, or research.
+                </p>
+                <div className="text-center text-lg font-medium mb-4 text-blue-700">$5-30/mo up to $100/mo</div>
+                <a
+                  href="https://tally.so/r/n0DYP6"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-calendar-gradient glass-effect text-white px-4 py-3 rounded-full font-medium 
+                           transform transition-all duration-300 ease-in-out
+                           hover:scale-105 hover:shadow-lg hover:-translate-y-1
+                           active:scale-95 active:translate-y-0 text-center
+                           shadow-[0_0_10px_rgba(139,92,246,0.3)]
+                           border border-white/20 block"
+                >
+                  Apply Now
+                </a>
+              </div>
             </div>
           </div>
         </MotionDiv>
