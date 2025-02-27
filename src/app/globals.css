@@ -249,3 +249,46 @@ body {
 .glass-effect:hover::before {
   left: 100%;
 }
+
+/* Mac Mini Animation - plays once and stops */
+@keyframes macMiniAnimation {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.mac-mini-svg {
+  will-change: transform, opacity;
+  animation: macMiniAnimation 3s forwards;
+}
+
+/* Mac Mini Stack Animation */
+@keyframes macMiniFade {
+  0% {
+    opacity: 0;
+    filter: blur(2px) brightness(0.9);
+    transform: translateY(0) translateX(-50%) scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0) brightness(1);
+    transform: translateY(0) translateX(-50%) scale(1);
+  }
+}
+
+.mac-mini-rise {
+  will-change: opacity, filter, transform;
+  animation: macMiniFade 1.2s ease-out forwards;
+  opacity: 0;
+}
+
+/* Scroll-triggered Mac Mini animations */
+.animate-mac-mini {
+  animation: macMiniFade 1.2s ease-out forwards;
+  will-change: opacity, filter, transform;
+}
