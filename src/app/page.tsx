@@ -57,7 +57,7 @@ const sponsors = [
   { name: 'warp', image: '/sponsor/warp.png' },
   { name: 'pplx', image: '/sponsor/pplx.png' },
   { name: 'modal labs', image: '/sponsor/modal.png' },
-  { name: 'ugreen', image: '/sponsor/ugreen.png' },
+  // { name: 'ugreen', image: '/sponsor/ugreen.png' },
   { name: 'psu', image: '/sponsor/psu.png' },
   { name: 'obsbot', image: '/sponsor/obsbot.png' },
   
