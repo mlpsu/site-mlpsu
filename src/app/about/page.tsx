@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
-import { ArrowUpRight } from 'lucide-react'
 import { MotionDiv, fadeIn, stagger } from '../../components/motion'
+import Navigation from '../../components/Navigation'
 import Image from 'next/image'
 
 const scrollingText = [
@@ -23,7 +23,25 @@ const scrollingText = [
 
 export const metadata: Metadata = {
   title: 'About ML@PSU',
-  description: 'Learn about ML@PSU and our mission to advance machine learning education and research.',
+  description: 'Learn about ML@PSU and our mission to advance machine learning education and research at Penn State.',
+  openGraph: {
+    title: 'About ML@PSU',
+    description: 'Learn about ML@PSU and our mission to advance machine learning education and research at Penn State.',
+    images: [
+      {
+        url: '/api/og?title=About ML@PSU&description=Our mission to advance machine learning education and research at Penn State',
+        width: 1200,
+        height: 630,
+        alt: 'About ML@PSU'
+      }
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'About ML@PSU',
+    description: 'Learn about ML@PSU and our mission to advance machine learning education and research at Penn State.',
+    images: ['/api/og?title=About ML@PSU&description=Our mission to advance machine learning education and research at Penn State'],
+  }
 }
 
 export default function AboutPage() {
@@ -52,32 +70,9 @@ export default function AboutPage() {
         {/* Navigation */}
         <MotionDiv
           variants={fadeIn}
-          className="flex flex-wrap justify-center items-center gap-4 md:gap-8 mb-12 pt-8 text-sm md:text-base"
+          className="pt-8"
         >
-          <Link 
-            href="/" 
-            className="text-gray-800 hover:text-[#FA8072] transition-colors flex items-center gap-1"
-          >
-            home <ArrowUpRight className="w-4 h-4 text-[#1E90FF]" />
-          </Link>
-          <Link 
-            href="/resources" 
-            className="text-gray-800 hover:text-[#FA8072] transition-colors flex items-center gap-1"
-          >
-            resources <ArrowUpRight className="w-4 h-4 text-[#1E90FF]" />
-          </Link>
-          <Link
-            href="/articles"
-            className="text-gray-800 hover:text-[#FA8072] transition-colors flex items-center gap-1" 
-          >
-            articles <ArrowUpRight className="w-4 h-4 text-[#1E90FF]" />
-          </Link>
-          <Link 
-            href="/contact" 
-            className="text-gray-800 hover:text-[#FA8072] transition-colors flex items-center gap-1"
-          >
-            contact <ArrowUpRight className="w-4 h-4 text-[#1E90FF]" />
-          </Link>
+          <Navigation className="mb-12 text-gray-800" />
         </MotionDiv>
 
         {/* Content */}
@@ -87,8 +82,7 @@ export default function AboutPage() {
             className="mb-12"
           >
             <h1 className="text-4xl font-bold font-mono text-gray-900">
-              <span className="text-[#FA8072]">ML@PSU</span> is a community of
-              <span className="bg-gradient-to-r from-[#FA8072] to-[#FFB6C1] text-transparent bg-clip-text"> machine learning enthusiasts</span>
+              ML@PSU is a community of machine learning enthusiasts
             </h1>
           </MotionDiv>
 
@@ -97,13 +91,12 @@ export default function AboutPage() {
               variants={fadeIn}
               className="space-y-4"
             >
-              <h2 className="text-2xl font-bold text-[#FA8072]">
+              <h2 className="text-2xl font-bold text-gray-900">
                 Our Mission
               </h2>
               <p className="text-lg leading-relaxed">
                 We&apos;re on a mission to make machine learning education accessible, engaging, and fun. 
-                Through <span className="text-[#FA8072]">workshops</span>, <span className="text-[#FA8072]">talks</span>, 
-                and <span className="text-[#FA8072]">hands-on projects</span>, we help students dive into the 
+                Through workshops, talks, and hands-on projects, we help students dive into the 
                 exciting world of AI.
               </p>
             </MotionDiv>
@@ -112,24 +105,24 @@ export default function AboutPage() {
               variants={fadeIn}
               className="space-y-4"
             >
-              <h2 className="text-2xl font-bold text-[#FA8072]">
+              <h2 className="text-2xl font-bold text-gray-900">
                 What We Do
               </h2>
               <ul className="space-y-3 text-lg">
                 <li className="flex items-start gap-2">
-                  <span className="text-[#FA8072]">→</span>
+                  <span className="text-gray-600">•</span>
                   Host weekly workshops and tech talks
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-[#FA8072]">→</span>
+                  <span className="text-gray-600">•</span>
                   Organize hands-on coding sessions
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-[#FA8072]">→</span>
+                  <span className="text-gray-600">•</span>
                   Connect students with industry experts
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-[#FA8072]">→</span>
+                  <span className="text-gray-600">•</span>
                   Build cool ML projects together
                 </li>
               </ul>
@@ -139,12 +132,11 @@ export default function AboutPage() {
               variants={fadeIn}
               className="space-y-4"
             >
-              <h2 className="text-2xl font-bold text-[#FA8072]">
+              <h2 className="text-2xl font-bold text-gray-900">
                 Join Us
               </h2>
               <p className="text-lg leading-relaxed">
-                Whether you&apos;re a <span className="text-[#FA8072]">complete beginner</span> or 
-                a <span className="text-[#FA8072]">seasoned ML engineer</span>, there&apos;s a place for you here. 
+                Whether you&apos;re a complete beginner or a seasoned ML engineer, there&apos;s a place for you here. 
                 We believe in learning together and helping each other grow.
               </p>
             </MotionDiv>
@@ -153,7 +145,7 @@ export default function AboutPage() {
               variants={fadeIn}
               className="space-y-4"
             >
-              <h2 className="text-2xl font-bold text-[#FA8072] text-center">
+              <h2 className="text-2xl font-bold text-gray-900 text-center">
                 Get Involved
               </h2>
               <div className="flex flex-wrap gap-6 justify-center">
@@ -161,15 +153,15 @@ export default function AboutPage() {
                   href="https://docs.google.com/forms/d/e/1FAIpQLSelQdK7kY8PMDSgemp9ksCSRHwji2qg3HgybPZuGuFMFrSVLg/viewform?usp=sf_link"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-xl hover:text-[#FA8072] transition-colors flex items-center justify-center gap-1 hover:shadow-[0_0_15px_rgba(250,128,114,0.5)]"
+                  className="bg-gray-900 text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition-colors flex items-center justify-center gap-1"
                 >
-                  become a member <ArrowUpRight className="w-5 h-5 text-[#FA8072]" />
+                  become a member
                 </Link>
                 <Link
                   href="/become-a-speaker"
-                  className="text-xl hover:text-[#FA8072] transition-colors flex items-center justify-center gap-1 hover:shadow-[0_0_15px_rgba(250,128,114,0.5)]"
+                  className="bg-gray-900 text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition-colors flex items-center justify-center gap-1"
                 >
-                  become a speaker <ArrowUpRight className="w-5 h-5 text-[#FA8072]" />
+                  become a speaker
                 </Link>
               </div>
             </MotionDiv>

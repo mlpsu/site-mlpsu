@@ -1,12 +1,30 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
-import { ArrowUpRight } from 'lucide-react'
 import { MotionDiv, fadeIn, stagger } from '../../components/motion'
+import Navigation from '../../components/Navigation'
 
 export const metadata: Metadata = {
   title: 'ML@PSU Resources',
-  description: 'A collection of machine learning resources for the ML@PSU community.',
+  description: 'A comprehensive collection of machine learning resources for the ML@PSU community.',
+  openGraph: {
+    title: 'ML@PSU Resources',
+    description: 'A comprehensive collection of machine learning resources, papers, courses, and tools.',
+    images: [
+      {
+        url: '/api/og?title=ML@PSU Resources&description=Comprehensive collection of ML resources, papers, courses, and tools',
+        width: 1200,
+        height: 630,
+        alt: 'ML@PSU Resources'
+      }
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'ML@PSU Resources',
+    description: 'A comprehensive collection of machine learning resources for the ML@PSU community.',
+    images: ['/api/og?title=ML@PSU Resources&description=Comprehensive collection of ML resources, papers, courses, and tools'],
+  }
 }
 
 const scrollingText = [
@@ -53,32 +71,7 @@ export default function ResourcesPage() {
         variants={stagger}
       >
         {/* Navigation */}
-        <div className="flex flex-wrap justify-center items-center gap-4 md:gap-8 mb-12 text-sm md:text-base">
-          <Link 
-            href="/" 
-            className="text-gray-800 hover:text-[#FA8072] transition-colors flex items-center gap-1"
-          >
-            home <ArrowUpRight className="w-4 h-4 text-[#1E90FF]" />
-          </Link>
-          <Link 
-            href="/about" 
-            className="text-gray-800 hover:text-[#FA8072] transition-colors flex items-center gap-1"
-          >
-            about <ArrowUpRight className="w-4 h-4 text-[#1E90FF]" />
-          </Link>
-          <Link
-            href="/articles"
-            className="text-gray-800 hover:text-[#FA8072] transition-colors flex items-center gap-1" 
-          >
-            articles <ArrowUpRight className="w-4 h-4 text-[#1E90FF]" />
-          </Link>
-          <Link 
-            href="/contact" 
-            className="text-gray-800 hover:text-[#FA8072] transition-colors flex items-center gap-1"
-          >
-            contact <ArrowUpRight className="w-4 h-4 text-[#1E90FF]" />
-          </Link>
-        </div>
+        <Navigation className="mb-12 text-gray-800" />
 
         {/* Content */}
         <div className="max-w-6xl mx-auto px-4 py-8">
@@ -107,9 +100,8 @@ export default function ResourcesPage() {
                 A comprehensive collection of machine learning resources, including research papers,
                 courses, tutorials, and tools.
               </p>
-              <div className="text-sm text-gray-600 flex items-center justify-between">
+              <div className="text-sm text-gray-600">
                 <span>Updated regularly • Curated by Pranav Karra</span>
-                <ArrowUpRight className="w-5 h-5" />
               </div>
             </a>
           </div>

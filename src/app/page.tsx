@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { MotionDiv, fadeIn, stagger } from '../components/motion'
-import { ArrowUpRight } from 'lucide-react'
+import Navigation from '../components/Navigation'
 import { useState, useEffect, useRef } from 'react'
 import { motion, useScroll, useTransform, useInView } from 'framer-motion'
 
@@ -66,7 +66,6 @@ const sponsors = [
 
 export default function Home() {
   const [footerOffset, setFooterOffset] = useState(100) // Start fully hidden
-  const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -87,61 +86,22 @@ export default function Home() {
   }, [])
 
   return (
-    <div className="min-h-screen relative pb-16">
-      {/* Video Background with adjusted positioning */}
-      <div className="video-background fixed top-0 left-0 w-full h-full" style={{ zIndex: -3 }}>
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="w-full h-full object-cover"
-          style={{ position: 'absolute', top: '0', left: 0 }}
-        >
-          <source src="/sky.mp4" type="video/mp4" />
-        </video>
-      </div>
-      
-      {/* Debug container to help locate where the foreground image should be
-      <div className="fixed bottom-0 left-0 w-full h-64 bg-red-500 bg-opacity-30 pointer-events-none" style={{ zIndex: -1 }}>
-        <div className="p-4 text-white font-bold">Foreground image should appear here</div>
-      </div> */}
-      
-      {/* Foreground image using traditional img tag */}
-      <img
-        src="/bgbg.png"
-        alt="Foreground"
-        className="fixed bottom-0 left-0 w-full pointer-events-none"
-        style={{ zIndex: -2, maxWidth: '100vw', height: 'auto' }}
-      />
-
+    <div className="min-h-screen bg-white pb-16">
       <MotionDiv 
-        className="max-w-4xl mx-auto px-4 py-8 md:py-16 relative"
-        style={{ zIndex: 5 }}
+        className="max-w-4xl mx-auto px-4 py-8 md:py-16"
         initial="hidden"
         animate="visible"
         variants={stagger}
       >
-        <div className="flex flex-wrap justify-center items-center gap-4 md:gap-8 mb-12 pt-16 md:pt-24 text-sm md:text-base">
-          <Link href="/about" className="hover:text-[#FA8072] transition-colors flex items-center gap-1 text-white">
-            about <ArrowUpRight className="w-4 h-4 text-[#1E90FF]" />
-          </Link>
-          <Link href="/resources" className="hover:text-[#FA8072] transition-colors flex items-center gap-1 text-white">
-            resources <ArrowUpRight className="w-4 h-4 text-[#1E90FF]" />
-          </Link>
-          <Link href="/articles" className="hover:text-[#FA8072] transition-colors flex items-center gap-1 text-white">
-            articles <ArrowUpRight className="w-4 h-4 text-[#1E90FF]" />
-          </Link>
-          <Link href="/contact" className="hover:text-[#FA8072] transition-colors flex items-center gap-1 text-white">
-            contact us <ArrowUpRight className="w-4 h-4 text-[#1E90FF]" />
-          </Link>
+        <div className="mb-12 pt-16 md:pt-24">
+          <Navigation className="text-black" />
         </div>
 
         <MotionDiv 
           className="flex justify-between items-center mb-24"
           variants={fadeIn}
         >
-          <h1 className="text-4xl font-mono tracking-tight text-white">ml@psu</h1>
+          <h1 className="text-4xl font-mono tracking-tight text-black">ml@psu</h1>
           <Image
             src="/logo.svg"
             alt="ML@PSU Logo"
@@ -158,7 +118,7 @@ export default function Home() {
         >
           <div className="scrolling-text text-sm font-pixel">
             {scrollingText.map((text, index) => (
-              <span key={index} className="hover-glow mx-8 text-white">
+              <span key={index} className="hover-glow mx-8 text-black">
                 {text}
               </span>
             ))}
@@ -166,25 +126,22 @@ export default function Home() {
         </MotionDiv>
 
         <MotionDiv 
-          className="text-left max-w-2xl mx-auto space-y-8 mb-32 video-content"
+          className="text-left max-w-2xl mx-auto space-y-8 mb-32"
           variants={fadeIn}
         >
-          <p className="leading-relaxed whitespace-pre-wrap">
-            Hey, nice to meet you through the web! We&apos;re just a group of friends who got really excited about machine learning and wanted to create a space where we could geek out together.
+          <p className="leading-relaxed whitespace-pre-wrap text-black">
+            ML@PSU is a community of students passionate about machine learning and artificial intelligence. We bring together learners at all levels to explore cutting-edge research, work on practical projects, and advance our understanding of ML together.
           </p>
-          <p className="leading-relaxed whitespace-pre-wrap">
-            We started this club because we wanted a place to meet other cool people interested in ML, invite interesting speakers, and get some funding to support members building awesome projects or attending conferences.
+          <p className="leading-relaxed whitespace-pre-wrap text-black">
+            We host regular workshops, invite industry speakers, and provide funding support for members attending conferences or building projects. Our active Discord community shares research papers, discusses the latest developments in AI, and collaborates on learning initiatives.
           </p>
-          <p className="leading-relaxed whitespace-pre-wrap">
-            We regularly hold events - sometimes it&apos;s a guest speaker sharing their work, other times it&apos;s casual workshops where we walk through cool ML concepts together. We&apos;ve got a pretty active Discord server too, where we share everything from research papers to the latest AI news and tools.
-          </p>
-          <p className="leading-relaxed whitespace-pre-wrap">
-            If you&apos;re motivated and curious about ML, we can help you out with resources like subscriptions, and maybe even take you along to conferences. We&apos;re all about supporting each other&apos;s learning journey!
+          <p className="leading-relaxed whitespace-pre-wrap text-black">
+            Whether you&apos;re just starting your ML journey or already experienced, we offer resources, mentorship, and opportunities to grow your skills while contributing to the broader ML community at Penn State.
           </p>
         </MotionDiv>
 
         <div 
-          className="flex flex-col items-center justify-center gap-6 mb-32 video-content"
+          className="flex flex-col items-center justify-center gap-6 mb-32"
         >
           {/* Main buttons side by side */}
           <div className="flex flex-wrap justify-center gap-4 w-full max-w-2xl">
@@ -192,20 +149,18 @@ export default function Home() {
               href="https://tally.so/r/mJWMy7"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-white !text-black px-6 py-3 rounded-full font-medium flex-1 min-w-[180px]
-                       text-center font-bold
-                       border-2 border-white"
-              style={{ color: 'black !important' }}
+              className="bg-black text-white px-6 py-3 rounded-full font-medium flex-1 min-w-[180px]
+                       text-center font-bold hover:bg-gray-800 transition-colors
+                       border-2 border-black"
             >
               Join ML@PSU
             </a>
 
             <a
               href="#resources-we-offer"
-              className="bg-white !text-black px-6 py-3 rounded-full font-medium flex-1 min-w-[180px]
-                       text-center font-bold
-                       border-2 border-white"
-              style={{ color: 'black !important' }}
+              className="bg-black text-white px-6 py-3 rounded-full font-medium flex-1 min-w-[180px]
+                       text-center font-bold hover:bg-gray-800 transition-colors
+                       border-2 border-black"
             >
               Resources we offer
             </a>
@@ -217,25 +172,25 @@ export default function Home() {
               href="https://discord.gg/4BUhteYYgT"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-[#5865F2] transition-colors flex items-center gap-1"
+              className="text-black underline hover:text-[#5865F2] transition-all duration-200 underline-offset-4"
             >
-              Discord <ArrowUpRight className="w-4 h-4" />
+              Discord
             </a>
             <a
               href="https://groupme.com/join_group/103911031/6hLBvx9a"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-[#00AFF0] transition-colors flex items-center gap-1"
+              className="text-black underline hover:text-[#00AFF0] transition-all duration-200 underline-offset-4"
             >
-              GroupMe <ArrowUpRight className="w-4 h-4" />
+              GroupMe
             </a>
             <a
               href="https://lu.ma/mlpsu"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-[#9333ea] transition-colors flex items-center gap-1"
+              className="text-black underline hover:text-[#9333ea] transition-all duration-200 underline-offset-4"
             >
-              Calendar <ArrowUpRight className="w-4 h-4" />
+              Calendar
             </a>
           </div>
         </div>
@@ -264,7 +219,7 @@ export default function Home() {
             className="max-w-3xl mx-auto mb-32 text-center"
             variants={fadeIn}
           >
-            <h2 className="text-xl font-bold mb-8">our sponsors</h2>
+            <h2 className="text-xl font-bold mb-8">Our Sponsors</h2>
             <div className="sponsors-container">
               <div className="animate-scroll-sponsors">
                 {[...sponsors, ...sponsors, ...sponsors].map((sponsor, index) => (
@@ -281,81 +236,12 @@ export default function Home() {
             </div>
           </MotionDiv>
 
-          <MotionDiv 
-            className="max-w-3xl mx-auto mb-32"
-            variants={fadeIn}
-          >
-            <div className="flex flex-col items-center justify-center">
-              <div 
-                className="relative mb-12 flex justify-center w-full" 
-                style={{ height: '800px' }}
-                ref={containerRef}
-              >
-                <div className="relative w-full max-w-[400px] flex flex-col items-center justify-center">
-                  {[0, 1, 2, 3, 4].map((index) => {
-                    const macMiniRef = useRef(null);
-                    const isInView = useInView(macMiniRef, { 
-                      once: true, // Animation triggers only once
-                      amount: 0.2, // When 20% of the element is visible
-                      margin: "0px 0px -100px 0px" // Adjust trigger area
-                    });
-                    
-                    return (
-                      <motion.div 
-                        key={`mac-mini-${index}`}
-                        ref={macMiniRef}
-                        className="absolute transform"
-                        style={{
-                          bottom: `${index * 155}px`,
-                          zIndex: 5 - index,
-                          width: '100%',
-                          display: 'flex',
-                          justifyContent: 'center'
-                        }}
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={isInView ? 
-                          { opacity: 1, y: 0 } : 
-                          { opacity: 0, y: 20 }
-                        }
-                        transition={{ 
-                          duration: 0.6, 
-                          delay: index * 0.1,
-                          ease: "easeOut"
-                        }}
-                      >
-                        <Image
-                          src="/MacMini.png"
-                          alt={`Mac Mini Inference Server ${index + 1}`}
-                          width={400}
-                          height={400}
-                          className="w-full h-auto"
-                          priority={index < 2}
-                          style={{ 
-                            filter: 'drop-shadow(0px 5px 15px rgba(0, 0, 0, 0.1))'
-                          }}
-                        />
-                      </motion.div>
-                    );
-                  })}
-                </div>
-              </div>
-              
-              <div className="text-center max-w-xl">
-                <h3 className="text-2xl font-medium mb-3">Our Mac Mini Inference Server</h3>
-                <p className="text-gray-700 mb-6">Powering ML@PSU projects and demos with local inference capabilities.</p>
-                
-                <div className="bg-yellow-300/30 text-yellow-800 px-6 py-2 rounded-lg font-medium inline-block">
-                  Coming Soon
-                </div>
-              </div>
-            </div>
-          </MotionDiv>
 
           <MotionDiv 
             className="max-w-3xl mx-auto mb-32"
             variants={fadeIn}
           >
-            <h2 className="text-xl font-bold mb-8 text-center">upcoming events</h2>
+            <h2 className="text-xl font-bold mb-8 text-center">Upcoming Events</h2>
             <div className="w-full flex justify-center">
               <iframe
                 src="https://lu.ma/embed/calendar/cal-3mrXkQHS4duefEd/events?lt=light"
@@ -413,7 +299,7 @@ export default function Home() {
             id="resources-we-offer"
             style={{ scrollMarginTop: '100px' }}
           >
-            <h2 className="text-xl font-bold mb-8 text-center">what we are offering</h2>
+            <h2 className="text-xl font-bold mb-8 text-center">What We Are Offering</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {/* Anthropic Credits Card */}
               <div className="bg-white rounded-xl overflow-hidden shadow-lg border border-gray-200 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group">
@@ -431,17 +317,14 @@ export default function Home() {
                   <p className="text-gray-600 mb-4 flex-grow">
                     $5-10/mo credits that can be used for Claude Code, Projects, Cursor, and more.
                   </p>
-                  <div className="text-center text-lg font-medium mb-4 text-purple-700">$5-10/mo</div>
+                  <div className="text-center text-lg font-medium mb-4 text-gray-700">$5-10/mo</div>
                   <a
                     href="https://tally.so/r/w8RW2P"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="btn-ml-gradient glass-effect text-white px-4 py-3 rounded-full font-medium 
-                             transform transition-all duration-300 ease-in-out
-                             hover:scale-105 hover:shadow-lg hover:-translate-y-1
-                             active:scale-95 active:translate-y-0 text-center
-                             shadow-[0_0_15px_rgba(255,105,180,0.3)]
-                             border border-white/20 block"
+                    className="bg-gray-900 text-white px-4 py-3 rounded-lg font-medium 
+                             hover:bg-gray-800 transition-colors
+                             text-center block"
                   >
                     Apply Now
                   </a>
@@ -464,17 +347,14 @@ export default function Home() {
                   <p className="text-gray-600 mb-4 flex-grow">
                     $5-10/mo credits that can be used for projects, Cursor, and anything else OpenAI offers.
                   </p>
-                  <div className="text-center text-lg font-medium mb-4 text-green-700">$5-10/mo</div>
+                  <div className="text-center text-lg font-medium mb-4 text-gray-700">$5-10/mo</div>
                   <a
                     href="https://tally.so/r/w8RW2P"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="btn-discord-gradient glass-effect text-white px-4 py-3 rounded-full font-medium 
-                             transform transition-all duration-300 ease-in-out
-                             hover:scale-105 hover:shadow-lg hover:-translate-y-1
-                             active:scale-95 active:translate-y-0 text-center
-                             shadow-[0_0_10px_rgba(88,101,242,0.3)]
-                             border border-white/20 block"
+                    className="bg-gray-900 text-white px-4 py-3 rounded-lg font-medium 
+                             hover:bg-gray-800 transition-colors
+                             text-center block"
                   >
                     Apply Now
                   </a>
@@ -497,17 +377,14 @@ export default function Home() {
                   <p className="text-gray-600 mb-4 flex-grow">
                     $5-30/mo credits (up to $100/mo with proper research proposal and advisor approval). Rent GPUs for inference, training, experiments, or research.
                   </p>
-                  <div className="text-center text-lg font-medium mb-4 text-blue-700">$5-30/mo up to $100/mo</div>
+                  <div className="text-center text-lg font-medium mb-4 text-gray-700">$5-30/mo up to $100/mo</div>
                   <a
                     href="https://tally.so/r/n0DYP6"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="btn-calendar-gradient glass-effect text-white px-4 py-3 rounded-full font-medium 
-                             transform transition-all duration-300 ease-in-out
-                             hover:scale-105 hover:shadow-lg hover:-translate-y-1
-                             active:scale-95 active:translate-y-0 text-center
-                             shadow-[0_0_10px_rgba(139,92,246,0.3)]
-                             border border-white/20 block"
+                    className="bg-gray-900 text-white px-4 py-3 rounded-lg font-medium 
+                             hover:bg-gray-800 transition-colors
+                             text-center block"
                   >
                     Apply Now
                   </a>
@@ -539,9 +416,9 @@ export default function Home() {
                         href={member.link} 
                         target="_blank" 
                         rel="noopener noreferrer" 
-                        className="text-lg hover:text-[#FA8072] transition-colors flex items-center gap-1"
+                        className="text-lg underline hover:text-[#FA8072] transition-all duration-200 underline-offset-4"
                       >
-                        {member.name} <ArrowUpRight className="w-4 h-4" />
+                        {member.name}
                       </Link>
                     )}
                     <p className="text-gray-400">{member.role}</p>
@@ -570,9 +447,9 @@ export default function Home() {
                     href={speaker.link} 
                     target="_blank" 
                     rel="noopener noreferrer" 
-                    className="text-lg hover:text-[#FA8072] transition-colors flex items-center gap-1"
+                    className="text-lg underline hover:text-[#FA8072] transition-all duration-200 underline-offset-4"
                   >
-                    {speaker.name} <ArrowUpRight className="w-4 h-4" />
+                    {speaker.name}
                   </Link>
                 </div>
               ))}

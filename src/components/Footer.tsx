@@ -4,7 +4,7 @@ import Image from 'next/image'
 export default function Footer() {
   return (
     <div 
-      className="w-full py-16 text-white relative"
+      className="w-full pt-24 pb-16 text-white relative"
       style={{
         backgroundImage: "url('/footerback.png')",
         backgroundSize: 'cover',
@@ -16,20 +16,20 @@ export default function Footer() {
           <div>
             <h3 className="font-bold mb-4">MORE LINKS</h3>
             <div className="space-y-2">
-              <Link href="#" className="block hover:text-[#FA8072] transition-colors">
-                Back to Top ↗
+              <Link href="#" className="block underline hover:text-[#FA8072] transition-all duration-200 underline-offset-4">
+                Back to Top
               </Link>
-              <Link href="/" className="block hover:text-[#FA8072] transition-colors">
-                Home ↗
+              <Link href="/" className="block underline hover:text-[#FA8072] transition-all duration-200 underline-offset-4">
+                Home
               </Link>
-              <Link href="/about" className="block hover:text-[#FA8072] transition-colors">
-                About ↗
+              <Link href="/about" className="block underline hover:text-[#FA8072] transition-all duration-200 underline-offset-4">
+                About
               </Link>
-              <Link href="/resources" className="block hover:text-[#FA8072] transition-colors">
-                Resources ↗
+              <Link href="/resources" className="block underline hover:text-[#FA8072] transition-all duration-200 underline-offset-4">
+                Resources
               </Link>
-              <Link href="/contact" className="block hover:text-[#FA8072] transition-colors">
-                Contact ↗
+              <Link href="/contact" className="block underline hover:text-[#FA8072] transition-all duration-200 underline-offset-4">
+                Contact
               </Link>
             </div>
           </div>
@@ -41,25 +41,25 @@ export default function Footer() {
                 href="https://tally.so/r/mJWMy7"
                 target="_blank"
                 rel="noopener noreferrer" 
-                className="block hover:text-[#FA8072] transition-colors"
+                className="block underline hover:text-[#FA8072] transition-all duration-200 underline-offset-4"
               >
-                Join ML@PSU ↗
+                Join ML@PSU
               </Link>
               <Link 
                 href="https://discord.gg/4BUhteYYgT"
                 target="_blank"
                 rel="noopener noreferrer" 
-                className="block hover:text-[#FA8072] transition-colors"
+                className="block underline hover:text-[#FA8072] transition-all duration-200 underline-offset-4"
               >
-                Join our Discord ↗
+                Join our Discord
               </Link>
               <Link 
                 href="https://groupme.com/join_group/103911031/6hLBvx9a"
                 target="_blank"
                 rel="noopener noreferrer" 
-                className="block hover:text-[#FA8072] transition-colors"
+                className="block underline hover:text-[#FA8072] transition-all duration-200 underline-offset-4"
               >
-                Join GroupMe ↗
+                Join GroupMe
               </Link>
             </div>
           </div>
@@ -71,9 +71,9 @@ export default function Footer() {
                 href="https://lu.ma/mlpsu"
                 target="_blank"
                 rel="noopener noreferrer" 
-                className="block hover:text-[#FA8072] transition-colors"
+                className="block underline hover:text-[#FA8072] transition-all duration-200 underline-offset-4"
               >
-                Subscribe to Events ↗
+                Subscribe to Events
               </Link>
             </div>
           </div>
