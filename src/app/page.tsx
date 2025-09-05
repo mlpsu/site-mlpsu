@@ -3,7 +3,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { MotionDiv, fadeIn, stagger } from '../components/motion'
-import Navigation from '../components/Navigation'
 import { useState, useEffect, useRef } from 'react'
 import { motion, useScroll, useTransform, useInView } from 'framer-motion'
 
@@ -36,22 +35,6 @@ const pastSpeakers = [
   }
 ]
 
-const scrollingText = [
-  "Do machines dream?",
-  "Can machines be creative?",
-  "Do AIs experience time?",
-  "What's in the black box?",
-  "What do LLMs think about?",
-  "Can AI understand poetry?",
-  "Do models have souls?",
-  "Is consciousness computable?",
-  "Can AI feel love?",
-  "What are machine dreams made of?",
-  "Do neural nets have memories?",
-  "Are they conscious?",
-  "Can AI feel emotions?",
-  "Do neural networks hallucinate?"
-]
 
 const sponsors = [
   { name: 'warp', image: '/sponsor/warp.png' },
@@ -91,36 +74,11 @@ export default function Home() {
         animate="visible"
         variants={stagger}
       >
-        <div className="mb-12 pt-16 md:pt-24">
-          <Navigation className="text-black" />
-        </div>
-
         <MotionDiv 
-          className="flex justify-between items-center mb-24"
+          className="flex justify-center items-center mb-24 mt-8"
           variants={fadeIn}
         >
-          <h1 className="text-4xl font-mono tracking-tight text-black">ml@psu</h1>
-          <Image
-            src="/logo.svg"
-            alt="ML@PSU Logo"
-            width={60}
-            height={60}
-            priority
-            className="animate-spin-slow"
-          />
-        </MotionDiv>
-
-        <MotionDiv 
-          className="scrolling-container mb-32"
-          variants={fadeIn}
-        >
-          <div className="scrolling-text text-sm font-pixel">
-            {scrollingText.map((text, index) => (
-              <span key={index} className="hover-glow mx-8 text-black">
-                {text}
-              </span>
-            ))}
-          </div>
+          <h1 className="text-4xl font-mono tracking-tight text-black">Welcome to ML@PSU</h1>
         </MotionDiv>
 
         <MotionDiv 
