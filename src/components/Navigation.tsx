@@ -13,9 +13,6 @@ export default function Navigation({ className = "text-black" }: NavigationProps
       <Link href="/about" className="underline hover:text-[#FA8072] transition-all duration-200 underline-offset-4">
         about
       </Link>
-      <Link href="/resources" className="underline hover:text-[#FA8072] transition-all duration-200 underline-offset-4">
-        resources
-      </Link>
       <Link href="/contact" className="underline hover:text-[#FA8072] transition-all duration-200 underline-offset-4">
         contact us
       </Link>

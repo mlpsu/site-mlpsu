@@ -25,11 +25,16 @@ export default function Footer() {
               <Link href="/about" className="block underline hover:text-[#FA8072] transition-all duration-200 underline-offset-4">
                 About
               </Link>
-              <Link href="/resources" className="block underline hover:text-[#FA8072] transition-all duration-200 underline-offset-4">
-                Resources
-              </Link>
               <Link href="/contact" className="block underline hover:text-[#FA8072] transition-all duration-200 underline-offset-4">
                 Contact
+              </Link>
+              <Link 
+                href="https://status.mlpsu.org" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block underline hover:text-[#FA8072] transition-all duration-200 underline-offset-4"
+              >
+                Status
               </Link>
             </div>
           </div>
@@ -60,6 +65,14 @@ export default function Footer() {
                 className="block underline hover:text-[#FA8072] transition-all duration-200 underline-offset-4"
               >
                 Join GroupMe
+              </Link>
+              <Link 
+                href="https://jobs.mlpsu.org"
+                target="_blank"
+                rel="noopener noreferrer" 
+                className="block underline hover:text-[#FA8072] transition-all duration-200 underline-offset-4"
+              >
+                Join Our Board
               </Link>
             </div>
           </div>
