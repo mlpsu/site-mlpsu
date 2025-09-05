@@ -57,11 +57,9 @@ const sponsors = [
   { name: 'warp', image: '/sponsor/warp.png' },
   { name: 'pplx', image: '/sponsor/pplx.png' },
   { name: 'modal labs', image: '/sponsor/modal.png' },
-  // { name: 'ugreen', image: '/sponsor/ugreen.png' },
   { name: 'psu', image: '/sponsor/psu.png' },
   { name: 'obsbot', image: '/sponsor/obsbot.png' },
-  
-  // Add all your sponsor images here
+  { name: 'upac', image: '/sponsor/UPAC.png' },
 ]
 
 export default function Home() {
@@ -220,19 +218,18 @@ export default function Home() {
             variants={fadeIn}
           >
             <h2 className="text-xl font-bold mb-8">Our Sponsors</h2>
-            <div className="sponsors-container">
-              <div className="animate-scroll-sponsors">
-                {[...sponsors, ...sponsors, ...sponsors].map((sponsor, index) => (
+            <div className="grid grid-cols-3 gap-6 max-w-2xl mx-auto">
+              {sponsors.map((sponsor, index) => (
+                <div key={sponsor.name} className="flex items-center justify-center p-6 bg-gray-100 rounded-lg border border-gray-200">
                   <Image
-                    key={`${sponsor.name}-${index}`}
                     src={sponsor.image}
                     alt={sponsor.name}
                     width={120}
                     height={60}
-                    className="object-contain h-14 opacity-90 hover:opacity-100 transition-opacity filter brightness-110 contrast-110"
+                    className="object-contain h-12"
                   />
-                ))}
-              </div>
+                </div>
+              ))}
             </div>
           </MotionDiv>
 
