@@ -13,7 +13,7 @@ const staff = [
   { name: 'Manit Garg', role: 'Treasurer', link: 'https://www.linkedin.com/in/manitgarg/', image: '/team/manit.jpeg' },
   { name: 'Evan Sinocchi', role: 'Technology Officer', link: 'https://www.linkedin.com/in/esinocchi/', image: '/team/evan.jpg' },
   { name: 'Dhruva Nagesh', role: 'Web developer', link: 'https://www.linkedin.com/in/dhruva-nagesh', image: '/team/dhruva.jpeg' },
-  { name: 'Ishaan Narang', role: 'Event Planner', link: 'https://www.linkedin.com/in/ishaannarang22/', image: '/team/ishaan.jpeg' }
+  { name: 'Ishaan Narang', role: 'Event Planner', link: 'https://www.linkedin.com/in/ishaannarang22/', image: '/team/Ishaan.jpeg' }
 ]
 
 const pastSpeakers = [
